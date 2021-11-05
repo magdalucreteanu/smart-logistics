@@ -30,6 +30,7 @@ TODO
 -	Karte – wie werden Pins auf eine Karte angezeigt?
 -	Funktionalität der Filterfelder (z.B. Datum von und bis) auf dem Shipment Screen implementieren
 -	Nachricht Funktionalität implementieren
+-	Logout Funktionalität
 
 ## Done
 -	Leeres Projekt in Github erstellen
