@@ -13,8 +13,8 @@ TODO
 
 -	Wireframes für alle Screens erstellen
 - Splash Screen erstellen
--	SQLite als Datenbank nutzen
 -	Login Screen erstellen
+-	SQLite als Datenbank nutzen (ähnlich wie in Stickers Projekt)
 -	Tabelle User für Logins anlegen (ähnlich wie in Stickers Projekt)
 -	Drei Testusers erstellen
 -	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
