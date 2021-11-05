@@ -1,0 +1,179 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1031{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri;}{\f1\fnil\fcharset0 Calibri;}{\f2\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\listtable 
+{\list\listhybrid
+{\listlevel\levelnfc23\leveljc0\levelstartat0{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}
+{\listlevel\levelnfc23\leveljc0\levelstartat1{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}\listid1 }
+{\list\listhybrid
+{\listlevel\levelnfc23\leveljc0\levelstartat0{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}
+{\listlevel\levelnfc23\leveljc0\levelstartat1{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}\listid2 }
+{\list\listhybrid
+{\listlevel\levelnfc23\leveljc0\levelstartat0{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}
+{\listlevel\levelnfc23\leveljc0\levelstartat1{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}\listid3 }}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\widctlpar\sa160\sl252\slmult1\b\f0\fs48\lang7 Intelligente Logistik\lang1031\par
+\fs32\lang7 Motivation\lang1031\par
+\b0\fs22\lang7 Logistikketten sind im Laufe der Jahre immer gr\'f6\'dfer und komplexer geworden und alle Arten von Waren werden rund um den Globus transportiert, einschlie\'dflich sensibler G\'fcter, die leicht durch Ver\'e4nderungen der Umgebungsbedingungen wie Temperatur oder Feuchtigkeit besch\'e4digt werden k\'f6nnen. Die Container, die diese G\'fcter transportieren, sind mit Klimaanlagen oder K\'fchlsystemen ausgestattet, die die optimale Erhaltung dieser Umweltbedingungen gew\'e4hrleisten.\lang1031\par
+\lang7 Wir m\'f6chten es den Kunden erm\'f6glichen, die Container end-to-end, von Anfang bis zum Ziel aus der Ferne zu \'fcberwachen und zu verwalten und Alarme f\'fcr den Transport einzurichten.\lang1031\par
+\par
+\b\lang7 Hauptfunktionalit\'e4ten unserer L\'f6sung:\lang2057\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls1\widctlpar\fi-360\li720\sa160\sl252\slmult1\b0\lang7 Mobileanwendung, die eine API f\'fcr den Zugriff auf die Umgebungsdaten   verwendet\lang1031\par
+{\listtext\f0 0\tab}\lang7 Zwei-Wege-Kommunikation\lang2057\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls1\ilvl1\widctlpar\fi-360\li1440\sa160\sl252\slmult1\lang7 ruft Umgebungsdaten aus dem Container ab und zeigt sie dem Kunden an\lang1031\par
+{\listtext\f0 1\tab}\lang7 sendet Warnungen vom Kunden an den Transport\lang1031\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls1\widctlpar\fi-360\li720\sa160\sl252\slmult1\lang7 (Ungef\'e4hre) Echtzeit-Sichtbarkeit der Umweltdaten zu jedem Zeitpunkt w\'e4hrend des Transports\lang1031\par
+{\listtext\f0 0\tab}\lang7 Benutzerfreundliche Darstellung der Daten mittels grafischer Diagramme\lang1031\par
+{\listtext\f0 1\tab}\lang7 Anzeige der Routenstandorte auf einer Karte\lang1031\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+\b\lang7 Ideen:\lang2057\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\widctlpar\fi-360\li720\sa160\sl252\slmult1\b0\lang7 API verwendet JSON-Strings\lang2057\par
+{\pntext\f2\'B7\tab}\lang7 Google Maps zur Anzeige der Standorte (ben\'f6tigen einen API-Schl\'fcssel)\lang1031\par
+{\pntext\f2\'B7\tab}\lang7 Temperaturdiagramme anzeigen\lang2057\par
+{\pntext\f2\'B7\tab}\lang7 Feuchteigkeitsdiagramme anzeigen\lang2057\par
+{\pntext\f2\'B7\tab}\lang7 Wir simulieren die Daten, da wir nicht \'fcber die Hardware daf\'fcr verf\'fcgen\lang1031\par
+{\pntext\f2\'B7\tab}\lang7 Wie zeigen wir \'c4nderungen in Echtzeit (z. B. \'c4nderungen \'fcber einen Zeitraum von 24 Stunden) in einem kurzen Zeitraum (z. B. 1 Minute Pr\'e4sentation)?\lang1031\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+\b\lang7 Voraussetzungen (nicht im Rahmen dieses Projekts):\lang1031\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\widctlpar\fi-360\li720\sa160\sl252\slmult1\b0\lang7 Alle Container sind mit der notwendigen Hardware ausgestattet, die ihre eigenen Umgebungsbedingungen \'fcberwacht.\lang1031\par
+{\pntext\f2\'B7\tab}\lang7 Die Hardware kann Daten \'fcber das Internet \'fcbertragen\lang1031\par
+{\pntext\f2\'B7\tab}\lang7 Die Hardware kann Daten intern speichern, wenn keine Internetverbindung verf\'fcgbar ist, und diese sp\'e4ter \'fcbertragen/senden zu k\'f6nnen.\lang1031\par
+{\pntext\f2\'B7\tab}\lang7 Die Daten werden in einer zentralen Datenbank \'fcbertragen und gespeichert und k\'f6nnen von unserer Anwendung \'fcber eine API abgerufen werden.\lang1031\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+\page\par
+\b Links\par
+\b0\par
+\b Datenbank\par
+{\b0{\field{\*\fldinst{HYPERLINK https://blog.logrocket.com/using-sqlite-with-react-native/ }}{\fldrslt{https://blog.logrocket.com/using-sqlite-with-react-native/\ul0\cf0}}}}\b0\f0\fs22\par
+\par
+\b\lang2057 Local Storage\par
+{\b0{\field{\*\fldinst{HYPERLINK https://medium.com/@peterjd42/using-local-storage-in-react-to-imitate-database-functionality-a2c339cdc1b5 }}{\fldrslt{https://medium.com/@peterjd42/using-local-storage-in-react-to-imitate-database-functionality-a2c339cdc1b5\ul0\cf0}}}}\b0\f0\fs22\par
+\par
+\par
+\b\lang1031 Fachliche Erkl\'e4rungen\par
+\b0 Ein \b Shipment\b0  ist eine Quantit\'e4t von Waren, die in Container transportiert werden.\par
+Ein Shipment hat einen Startort (z.B. Hamburg), einen Endort (z.B. Hong-Kong) und transportiert viele Containers.\par
+Ein \b Container\b0  hat eine Gr\'f6\'dfe, eine Beschreibung f\'fcr die Waren.\par
+\b Kelvin\b0  ist die internationale Messgr\'f6\'dfeneinheit f\'fcr Temperaturen. F\'fcr die Anzeige f\'fcr Kunden wird der Wert in Celsius oder Fahrenheit umgerechnet.\par
+Die \b relative Feuchtigkeit\b0  ist ein Prozentwert (von 0 bis 100), der zeigt wieviel Wasser die Luft einhalten kann.\par
+\par
+\b Allgemeine Hinweise\par
+\b0 Es gibt mindestens zwei Users, jeder mit seiner Liste von Shipments.\par
+\page\par
+\b Screens\par
+\par
+Auf allen Screens:\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls2\widctlpar\fi-360\li720\sa160\sl252\slmult1\b0 Hilfe Button \endash  TODO\par
+{\listtext\f0 0\tab}Nachricht senden Button\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls2\ilvl1\widctlpar\fi-360\li1440\sa160\sl252\slmult1 Damit kann der User eine Nachricht senden. Infos aus dem aktuellen Screen werden m\'f6glicherweise automatisiert mitgesendet.\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+\b Login\par
+\b0 Enth\'e4lt die folgenden Selder:\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\widctlpar\fi-360\li720\sa160\sl252\slmult1 Username\par
+{\pntext\f2\'B7\tab}Passwort\par
+{\pntext\f2\'B7\tab}Login\par
+
+\pard\widctlpar\sa160\sl252\slmult1 Die nicht angemeldeten Users d\'fcrfen nur den Login Link erreichen. Alle anderen Seiten machen ein Redirect auf die Login Seite.\par
+\par
+\b Shipment\par
+\b0 Zeigt eine Liste mit den Shipments die dem angemeldeten User geh\'f6ren.\par
+Jedes Shipment hat:\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\widctlpar\fi-360\li720\sa160\sl252\slmult1 Eine Nummer\par
+{\pntext\f2\'B7\tab}Startdatum\par
+{\pntext\f2\'B7\tab}Startort\par
+{\pntext\f2\'B7\tab}Enddatum\par
+{\pntext\f2\'B7\tab}Endort\par
+{\pntext\f2\'B7\tab}Anzahl Containers\par
+
+\pard\widctlpar\sa160\sl252\slmult1 Nach Auswahl des Shipments wird das Container Screen ge\'f6ffnet.\par
+\par
+\b Container\par
+\b0 Die Elemente der Seite sind wie folgt:\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls3\widctlpar\fi-360\li720\sa160\sl252\slmult1 eine Combobox mit allen Containers f\'fcr das ausgew\'e4hlte Shipment\par
+{\listtext\f0 0\tab}zwei Buttons womit der User zwischen Diagramm und Karte wechseln kann\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls3\ilvl1\widctlpar\fi-360\li1440\sa160\sl252\slmult1 Diagramm\par
+{\listtext\f0 1\tab}Karte\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls3\widctlpar\fi-360\li720\sa160\sl252\slmult1 zwei Datumsfelder f\'fcr die Filterung der Daten:\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls3\ilvl1\widctlpar\fi-360\li1440\sa160\sl252\slmult1 Datum von \endash  default Startdatum des Containers oder heute falls Startdatum in der Zukunft\par
+{\listtext\f0 1\tab}Datum bis \endash  default Enddatum des Containers oder heute falls Enddatum nicht gesetzt\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls3\widctlpar\fi-360\li720\sa160\sl252\slmult1 zwei Buttons um zwischen Temperatur Messeinheiten zu wechseln\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls3\ilvl1\widctlpar\fi-360\li1440\sa160\sl252\slmult1 Celsius - default\par
+{\listtext\f0 1\tab}Fahrenheit\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls3\widctlpar\fi-360\li720\sa160\sl252\slmult1 Ein Button \'84Zeigen\ldblquote  \endash  nach Klick werde entweder die Diagramme oder die Karte angezeigt\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+\b Diagramm\par
+\b0 Zeigt zwei Diagramm mit Messungen. Beide Diagramme haben die Zeit als x-Achse\par
+Diagramm 1 \endash  Temperaturen \endash  als y-Achse\par
+Diagramm 2 \endash  Feuchtigkeit \endash  als y-Achse\par
+\par
+\b Karte\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\widctlpar\fi-360\li720\sa160\sl252\slmult1\b0 Startort- als Standort Pin\par
+{\pntext\f2\'B7\tab}Endort - als Standort Pin\par
+{\pntext\f2\'B7\tab}Messungen auf der Karte - als Standort Pins\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+\par
+\page\par
+\b TODOs (Liste nicht vollst\'e4ndig)\par
+\b0\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\widctlpar\fi-360\li720\sa160\sl252\slmult1 Wireframes f\'fcr alle Screens erstellen\par
+{\pntext\f2\'B7\tab}Leeres Projekt in Github erstellen\par
+{\pntext\f2\'B7\tab}SQLite als Datenbank nutzen\par
+{\pntext\f2\'B7\tab}Login Screen erstellen\par
+{\pntext\f2\'B7\tab}Tabelle User f\'fcr Logins anlegen (\'e4hnlich wie in Stickers Projekt)\par
+{\pntext\f2\'B7\tab}Drei Testusers erstellen\par
+{\pntext\f2\'B7\tab}Login Funktionalit\'e4t implementieren (\'e4hnlich wie in Stickers Projekt \endash  aber mit React)\par
+{\pntext\f2\'B7\tab}Tabelle Shipment anlegen \endash  User Referenz nicht vergessen, jedes Shipment geh\'f6rt einem einzelnen User\par
+{\pntext\f2\'B7\tab}Tabelle Containers anlegen\par
+{\pntext\f2\'B7\tab}Test Shipments & Containers f\'fcr zwei von den Test users erstellen. Der dritte User hat keone Shipments.\par
+{\pntext\f2\'B7\tab}Shipment Screen erstellen. Die User Shipments werden hier angezeigt. Es kommt eine Infomeldung, falls der User keine Shipments hat. Nach shipment Auswahl soll der Container Screen angezeigt werden.\par
+{\pntext\f2\'B7\tab}Container Screen erstellen.\par
+{\pntext\f2\'B7\tab}Diagramm - Bibliothek f\'fcr die Anzeige von Diagrammen finden\par
+{\pntext\f2\'B7\tab}Karte - API Key f\'fcr Google Maps beantragen. Google Cloud Konto ben\'f6tigt?\par
+{\pntext\f2\'B7\tab}Struktur des JSON Strings definieren (inkl. Position auf der Karte \endash  Longitude & Latitude)\par
+{\pntext\f2\'B7\tab}Wo speichern wir die JSONs mit Messungen? Sie werden \'fcber eine API geliefert. Text Dateien?\par
+{\pntext\f2\'B7\tab}Diagramm Screen \endash  Messungen in zwei Diagrammen anzeigen\par
+{\pntext\f2\'B7\tab}Karte \endash  wie werden Pins auf eine Karte angezeigt?\par
+{\pntext\f2\'B7\tab}Funktionalit\'e4t der Filterfelder (z.B. Datum von und bis) auf dem Shipment Screen implementieren\par
+{\pntext\f2\'B7\tab}Nachricht Funktionalit\'e4t implementieren\par
+
+\pard\widctlpar\sa160\sl252\slmult1  \par
+
+\pard\sa200\sl276\slmult1\f1\lang7\par
+}
+ 
