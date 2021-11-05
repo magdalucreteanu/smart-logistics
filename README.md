@@ -3,7 +3,7 @@ Projekt C für MOSY (Mobile Systeme)
 
 ## MIRO Board
 
-TODO
+https://miro.com/app/board/o9J_lIYVFX8=/
 
 ## How To
 
