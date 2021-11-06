@@ -1,6 +1,6 @@
 node_modules/
 .expo/
-dist/
+.expo-shared/
 npm-debug.*
 *.jks
 *.p8
@@ -9,6 +9,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+
+# AndroidStudio
+.idea
 
 # macOS
 .DS_Store
