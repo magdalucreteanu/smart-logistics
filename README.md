@@ -11,13 +11,13 @@ TODO
 
 ## Offene Punkte (Liste nicht vollständig)
 
--	Wireframes für alle Screens erstellen
+-	Screens stylen
+-   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
 -   Splash Screen erstellen
 -	SQLite als Datenbank nutzen (ähnlich wie in Stickers Projekt)
 -	Tabelle User für Logins anlegen (ähnlich wie in Stickers Projekt)
 -	Drei Testusers erstellen
 -	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
--	Home screen erstellen
 -	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
 -	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
 -	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
@@ -32,7 +32,7 @@ TODO
 -	Logout Funktionalität
 
 ## Done
--	Leeres Projekt in Github erstellen
--   App erstellen
--   Login Screen, Home Screen, News Screen, Containers, DisplayContainer Screen erstellen
+-	Leeres Projekt in Github erstellt
+-   App erstellt
+-   Login-, Home-, News-, Containers-, DisplayContainer-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
 -   Navigation zwischen den Screens
