@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TextInput } from 'react-native';
-import { Button } from 'react-native-elements'
+import { Button } from 'react-native-elements';
 import {loginContainer, loginInputContainer} from '../constants/LayoutStyles';
 
 export default LoginScreen = ({ navigation }) => {

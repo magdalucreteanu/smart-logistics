@@ -34,5 +34,5 @@ TODO
 ## Done
 -	Leeres Projekt in Github erstellen
 -   App erstellen
--   Login Screen, Home Screen, News Screen und Containers Screen erstellen
+-   Login Screen, Home Screen, News Screen, Containers, DisplayContainer Screen erstellen
 -   Navigation zwischen den Screens

@@ -5,6 +5,9 @@ import {homeTileContainer, homeTileText} from '../constants/LayoutStyles';
 export default HomeScreen = ({ navigation }) => {
     return (
         <View style = {{flex:1}}>
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Text style={homeTileText()}>Hello User XX</Text>
+            </View>
             <TouchableOpacity
                 onPress= {() => navigation.navigate('News')} 
                 style = {homeTileContainer()}>
