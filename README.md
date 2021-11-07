@@ -12,8 +12,7 @@ TODO
 ## Offene Punkte (Liste nicht vollständig)
 
 -	Wireframes für alle Screens erstellen
-- Splash Screen erstellen
--	Login Screen erstellen
+-   Splash Screen erstellen
 -	SQLite als Datenbank nutzen (ähnlich wie in Stickers Projekt)
 -	Tabelle User für Logins anlegen (ähnlich wie in Stickers Projekt)
 -	Drei Testusers erstellen
@@ -34,3 +33,6 @@ TODO
 
 ## Done
 -	Leeres Projekt in Github erstellen
+-   App erstellen
+-   Login Screen, Home Screen, News Screen und Containers Screen erstellen
+-   Navigation zwischen den Screens
