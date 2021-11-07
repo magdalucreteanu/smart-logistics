@@ -6,7 +6,7 @@ import { Button } from 'react-native-elements';
 export default ContainersScreen = ({ navigation }) => {
 
     const pressHandler = () => {
-        navigation.navigate('DisplayContainer');
+        navigation.navigate('ContainerDisplay');
       }
 
     return (

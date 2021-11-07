@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import {defaultContainer} from '../constants/LayoutStyles';
 import { Button } from 'react-native-elements';
 
-const DisplayContainerScreen = ({ navigation }) => {
+const ContainerDisplayScreen = ({ navigation }) => {
     return (
         //Achtung: style verwendet defaultContainer
       <View style = {defaultContainer()}> 
@@ -15,4 +15,4 @@ const DisplayContainerScreen = ({ navigation }) => {
     );
 };
 
-export default DisplayContainerScreen;
+export default ContainerDisplayScreen;
