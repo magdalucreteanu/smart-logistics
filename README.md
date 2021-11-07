@@ -34,5 +34,5 @@ TODO
 ## Done
 -	Leeres Projekt in Github erstellt
 -   App erstellt
--   Login-, Home-, News-, Containers-, DisplayContainer-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
+-   Login-, Home-, News-, Containers-, ContainerDisplay-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
 -   Navigation zwischen den Screens
