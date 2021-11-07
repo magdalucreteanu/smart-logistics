@@ -1,13 +1,20 @@
 import React from 'react';
 import { Text, View, TextInput } from 'react-native';
-import LayoutStyles from '../constants/LayoutStyles';
+import { Button } from 'react-native-elements'
+import {loginContainer, loginInputContainer} from '../constants/LayoutStyles';
 
-export default LoginScreen = () => {
-    return (
-      <View style = {LayoutStyles.loginContainer}>
-          <Text>Login</Text>
-          <TextInput style = {LayoutStyles.inputContainer} placeholder="USER"/>
-          <TextInput style = {LayoutStyles.inputContainer} placeholder="PASSWORD"/>
-      </View>
-    );
+export default LoginScreen = ({ navigation }) => {
+
+  const pressHandler = () => {
+    navigation.navigate('Home');
+  }
+
+  return (
+    <View style = {loginContainer()}>
+        <Text>Login</Text>
+        <TextInput style = {loginInputContainer()} placeholder="USER"/>
+        <TextInput style = {loginInputContainer()} placeholder="PASSWORD"/>
+        <Button title="Login" onPress={pressHandler}/>
+    </View>
+  );
 };
