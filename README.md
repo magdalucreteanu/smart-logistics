@@ -15,6 +15,7 @@ TODO
 -   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
 -   Splash Screen erstellen
 -	Drei Testusers erstellen
+-   Seite: neuen User erstellen?
 -	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
 -	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
 -	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
