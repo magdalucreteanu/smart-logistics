@@ -14,8 +14,6 @@ TODO
 -	Screens stylen
 -   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
 -   Splash Screen erstellen
--	SQLite als Datenbank nutzen (ähnlich wie in Stickers Projekt)
--	Tabelle User für Logins anlegen (ähnlich wie in Stickers Projekt)
 -	Drei Testusers erstellen
 -	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
 -	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
@@ -36,3 +34,5 @@ TODO
 -   App erstellt
 -   Login-, Home-, News-, Containers-, ContainerDisplay-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
 -   Navigation zwischen den Screens
+-   database.js und useDatabase.js erstellt mit SQLite als Datenbank und der Tabelle "users"
+-   Testuser "John" mit dem Passwort "geheim" erstellt
