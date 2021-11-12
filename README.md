@@ -1,11 +1,20 @@
 # smart-logistics
 Projekt C für MOSY (Mobile Systeme)
 
+## Projekt Struktur
+
+Das PRojekt hat drei Teile:
+-   client - hier wird die React native App entwickelt
+-   server - simuliert den API Server der die Daten liefert
+-   database - die Datenbank für Logins
+
 ## MIRO Board
 
 https://miro.com/app/board/o9J_lIYVFX8=/
 
-## How To
+## How To Client
+
+Alle Skripte laufen im Ordner "client".
 
 Anfang des Projekts:
 -   AndroidStudio auf PC/Laptop installieren
@@ -24,6 +33,18 @@ Anwendung starten:
 -   Device in Android starten
 -   Terminal: npm start
 -   in Browser: Run on Android device/emulator um die Anwendung im Android Studio Emulator zu starten
+
+## How To Server
+
+Alle Skripte laufen im Ordner "server".
+
+Hier die Server howtos
+
+## How To Database
+
+Alle Skripte laufen im Ordner "database".
+
+Hier die Datenbank howtos
 
 ## Apache Echarts
 
