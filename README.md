@@ -7,7 +7,30 @@ https://miro.com/app/board/o9J_lIYVFX8=/
 
 ## How To
 
-TODO
+Anfang des Projekts:
+-   AndroidStudio auf PC/Laptop installieren
+-   Node.js installieren (evtl. aktuallisieren https://nodejs.org/en/ - hier die LTS Version installieren)
+-   Terminal: cd _project_root_
+-   Terminal: npm install (evtl. npm install -g npm)
+-   Terminal: npm install -g expo-cli
+-   Terminal: expo upgrade
+-   evtl. Expo App auf Handy installieren
+
+Bibliotheken:
+-   Charts: npm install echarts
+-   React native Charts: npm install react-native-echarts-wrapper
+
+Anwendung starten:
+-   Device in Android starten
+-   Terminal: npm start
+-   in Browser: Run on Android device/emulator um die Anwendung im Android Studio Emulator zu starten
+
+## Apache Echarts
+
+Hauptseite: https://echarts.apache.org/en/index.html
+Beispiele: https://echarts.apache.org/examples/en/index.html
+API Docs: https://echarts.apache.org/en/api.html#echarts
+React native Echarts: https://bestofreactjs.com/repo/tomLadder-react-native-echarts-wrapper-react-react-native-awesome-components 
 
 ## Offene Punkte (Liste nicht vollständig)
 
