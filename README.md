@@ -41,6 +41,7 @@ Bibliotheken:
 -   Charts: npm install echarts
 -   React native Charts: npm install react-native-echarts-wrapper
 -   Moment: npm install moment
+-   Maps: npm install react-native-maps
 
 Anwendung starten:
 -   Device in Android starten
@@ -53,6 +54,7 @@ Sowas wie localhost oder 127.0.0.1 als Server Adresse funktioniert nicht weil de
 
 Links:
 -   https://momentjs.com/
+-   https://blog.logrocket.com/react-native-maps-introduction/
 
 ## How To Server
 
@@ -81,6 +83,9 @@ Hauptseite: https://echarts.apache.org/en/index.html
 Beispiele: https://echarts.apache.org/examples/en/index.html
 API Docs: https://echarts.apache.org/en/api.html#echarts
 React native Echarts: https://bestofreactjs.com/repo/tomLadder-react-native-echarts-wrapper-react-react-native-awesome-components 
+
+## Karte
+React native maps: https://github.com/react-native-maps/react-native-maps
 
 ## Offene Punkte (Liste nicht vollständig)
 

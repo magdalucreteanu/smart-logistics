@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
-import { Alert, Text, View, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { ECharts } from "react-native-echarts-wrapper";
 
-// Constants
-import { serverAddress } from '../constants/Server';
+const ContainerEnvironmentScreen = ({ route, navigation }) => {
 
-const ContainerEnvironmentScreen = ({ navigation }) => {
+    const { measurements } = route.params;
 
-    optionTemperature = {
+    const optionTemperature = {
         title: {
             text: 'Temperature',
             //subtext: 'subtext here',
@@ -33,7 +32,7 @@ const ContainerEnvironmentScreen = ({ navigation }) => {
         ]
     };
 
-    optionHumidity = {
+    const optionHumidity = {
         title: {
             text: 'Humidity',
             //subtext: 'subtext here',
@@ -59,36 +58,23 @@ const ContainerEnvironmentScreen = ({ navigation }) => {
         ]
     };
 
-    loadMeasurements = async () => {
-        try {
-            let response = await fetch(serverAddress() + '/measurements');
-            let json = await response.json();
-
-            json.forEach(element => {
-                // Temperatur Diagramm
-                this.optionTemperature.xAxis.data.push(element.date);
-                this.optionTemperature.series[0].data.push(element.temperature);
-                // Feuchtigkeit Diagramm
-                this.optionHumidity.xAxis.data.push(element.date);
-                this.optionHumidity.series[0].data.push(element.humidity);
-            });
-        } catch (error) {
-            Alert.alert('Error:', error.message);
-        }
-      }
-
-    useEffect(() => {
-        loadMeasurements();
-    }, []);
+    measurements.forEach(element => {
+        // Temperatur Diagramm
+        optionTemperature.xAxis.data.push(element.date);
+        optionTemperature.series[0].data.push(element.temperature);
+        // Feuchtigkeit Diagramm
+        optionHumidity.xAxis.data.push(element.date);
+        optionHumidity.series[0].data.push(element.humidity);
+    });
 
     return (
         <View style={styles.chartContainer}>
             <ECharts
-            option={this.optionTemperature}
+            option={optionTemperature}
             backgroundColor="rgba(93, 169, 81, 0.3)"
             />
             <ECharts
-            option={this.optionHumidity}
+            option={optionHumidity}
             backgroundColor="rgba(93, 169, 81, 0.3)"
             />
         </View>
