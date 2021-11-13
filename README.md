@@ -12,6 +12,18 @@ Das PRojekt hat drei Teile:
 
 https://miro.com/app/board/o9J_lIYVFX8=/
 
+## Anwendung starten
+Schritte:
+-	Bibliotheken installieren mit npm
+-   Server
+	-	cd server
+	-	node app.js
+-	Client
+	-	erst IP Adresse des Laptops finden (ipconfig)
+	-	diesen IP Wert in serverAddress Wert in Server.js eintragen
+	-	cd client
+	-	npm start
+
 ## How To Client
 
 Alle Skripte laufen im Ordner "client".
@@ -28,17 +40,34 @@ Anfang des Projekts:
 Bibliotheken:
 -   Charts: npm install echarts
 -   React native Charts: npm install react-native-echarts-wrapper
+-   Moment: npm install moment
 
 Anwendung starten:
 -   Device in Android starten
 -   Terminal: npm start
 -   in Browser: Run on Android device/emulator um die Anwendung im Android Studio Emulator zu starten
 
+**Wichtig:** um den Server zu erreichen muss die Konstante serverAddress in Server.js angepasst werden.
+Hier steht die korrekte Adresse des Laptops (mit ipconfig oä zu finden).
+Sowas wie localhost oder 127.0.0.1 als Server Adresse funktioniert nicht weil der Emulator (oder Handy) ein separates Gerät mit einer anderen IP Adresse ist.
+
+Links:
+-   https://momentjs.com/
+
 ## How To Server
 
 Alle Skripte laufen im Ordner "server".
 
-Hier die Server howtos
+Anfang des Projekts:
+-   Terminal: npm install -g express-generator
+-   Terminal: npm install express --save
+
+Server starten:
+-   Terminal: node app.js
+
+Links:
+-   https://medium.com/@onejohi/building-a-simple-rest-api-with-nodejs-and-express-da6273ed7ca9
+-   https://www.robinwieruch.de/node-express-server-rest-api
 
 ## How To Database
 

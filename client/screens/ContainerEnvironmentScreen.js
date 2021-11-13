@@ -1,18 +1,21 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
+import { Alert, Text, View, StyleSheet } from 'react-native';
 import { ECharts } from "react-native-echarts-wrapper";
+
+// Constants
+import { serverAddress } from '../constants/Server';
 
 const ContainerEnvironmentScreen = ({ navigation }) => {
 
     optionTemperature = {
         title: {
-            text: 'Temperatures',
+            text: 'Temperature',
             //subtext: 'subtext here',
             left: 'center'
         },
         xAxis: {
             type: "category",
-            data: ["11 Sep", "21 Sep", "03 Oct", "14 Oct", "31 Oct", "01 Nov", "07 Nov"]
+            data: []
         },
         yAxis: {
             type: "value",
@@ -24,7 +27,7 @@ const ContainerEnvironmentScreen = ({ navigation }) => {
         },
         series: [
             {
-                data: [10, 15, 12, 11, 18, 16, 11],
+                data: [],
                 type: "line"
             }
         ]
@@ -38,7 +41,7 @@ const ContainerEnvironmentScreen = ({ navigation }) => {
         },
         xAxis: {
             type: "category",
-            data: ["11 Sep", "21 Sep", "03 Oct", "14 Oct", "31 Oct", "01 Nov", "07 Nov"]
+            data: []
         },
         yAxis: {
             type: "value",
@@ -50,12 +53,33 @@ const ContainerEnvironmentScreen = ({ navigation }) => {
         },
         series: [
             {
-                data: [40, 45, 48, 52, 46, 45, 49],
+                data: [],
                 type: "line"
             }
         ]
     };
 
+    loadMeasurements = async () => {
+        try {
+            let response = await fetch(serverAddress() + '/measurements');
+            let json = await response.json();
+
+            json.forEach(element => {
+                // Temperatur Diagramm
+                this.optionTemperature.xAxis.data.push(element.date);
+                this.optionTemperature.series[0].data.push(element.temperature);
+                // Feuchtigkeit Diagramm
+                this.optionHumidity.xAxis.data.push(element.date);
+                this.optionHumidity.series[0].data.push(element.humidity);
+            });
+        } catch (error) {
+            Alert.alert('Error:', error.message);
+        }
+      }
+
+    useEffect(() => {
+        loadMeasurements();
+    }, []);
 
     return (
         <View style={styles.chartContainer}>
