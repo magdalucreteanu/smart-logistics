@@ -19,17 +19,48 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         yAxis: {
             type: "value",
             axisLabel: {
-                formatter: function (val) {
-                    return val + '°C';
-                }
+                formatter: '{value} °C'
             },
+            splitLine: {
+                show: true
+            }
         },
         series: [
             {
                 data: [],
-                type: "line"
+                type: "line",
+                markPoint: {
+                    data: [
+                      { type: 'max', name: 'Max' },
+                      { type: 'min', name: 'Min' }
+                    ]
+                },
+                markLine: {
+                    label: {
+                        formatter: '{c} °C'
+                    },
+                    data: [{ type: 'average', name: 'Avg' }]
+                }
             }
-        ]
+        ],
+        tooltip: {
+            trigger: 'axis'
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                magicType: {
+                    title: {
+                        line: 'Switch to Line Chart',
+                        bar: 'Switch to Bar Chart'
+                    },
+                    type: ['line', 'bar']
+                },
+                restore: {
+                    title: 'Restore'
+                }
+            }
+        }
     };
 
     const optionHumidity = {
@@ -45,17 +76,48 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         yAxis: {
             type: "value",
             axisLabel: {
-                formatter: function (val) {
-                    return val + '%';
-                }
+                formatter: '{value} %'
             },
+            splitLine: {
+                show: true
+            }
         },
         series: [
             {
                 data: [],
-                type: "line"
+                type: "line",
+                markPoint: {
+                    data: [
+                      { type: 'max', name: 'Max' },
+                      { type: 'min', name: 'Min' }
+                    ]
+                },
+                markLine: {
+                    label: {
+                        formatter: '{c} %',
+                    },
+                    data: [{ type: 'average', name: 'Avg' }]
+                }
             }
-        ]
+        ],
+        tooltip: {
+            trigger: 'axis'
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                magicType: {
+                    title: {
+                        line: 'Switch to Line Chart',
+                        bar: 'Switch to Bar Chart'
+                    },
+                    type: ['line', 'bar']
+                },
+                restore: {
+                    title: 'Restore'
+                }
+            }
+        }
     };
 
     measurements.forEach(element => {
@@ -71,11 +133,11 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         <View style={styles.chartContainer}>
             <ECharts
             option={optionTemperature}
-            backgroundColor="rgba(93, 169, 81, 0.3)"
+            backgroundColor="rgba(0, 0, 0, 0.1)"
             />
             <ECharts
             option={optionHumidity}
-            backgroundColor="rgba(93, 169, 81, 0.3)"
+            backgroundColor="rgba(0, 0, 0, 0.1)"
             />
         </View>
     );
