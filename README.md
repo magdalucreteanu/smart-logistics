@@ -3,7 +3,7 @@ Projekt C für MOSY (Mobile Systeme)
 
 ## Projekt Struktur
 
-Das PRojekt hat zwei Teile:
+Das Projekt hat zwei Teile:
 -   client - hier wird die React native App entwickelt
 -   server - simuliert den API Server der die Daten liefert
 
