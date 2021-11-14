@@ -53,3 +53,10 @@ export const homeTileText = () => {
         textAlign: 'center',
     }
 };
+
+export const errorText = () => {
+    return {
+        color: 'red',
+        textAlign: 'center',
+    }
+};

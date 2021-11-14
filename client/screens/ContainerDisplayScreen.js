@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
-import {defaultContainer} from '../constants/LayoutStyles';
+import { Alert, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 
+import { defaultContainer } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 
 const ContainerDisplayScreen = ({ navigation }) => {
@@ -20,7 +20,7 @@ const ContainerDisplayScreen = ({ navigation }) => {
         } catch (error) {
             Alert.alert('Error:', error.message);
         }
-      }
+    }
 
     useEffect(() => {
         loadMeasurements();

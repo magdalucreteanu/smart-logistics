@@ -42,6 +42,7 @@ Bibliotheken:
 -   React native Charts: npm install react-native-echarts-wrapper
 -   Moment: npm install moment
 -   Maps: npm install react-native-maps
+-	Async Storage: npm install @react-native-async-storage/async-storage
 
 Anwendung starten:
 -   Device in Android starten
@@ -55,6 +56,8 @@ Sowas wie localhost oder 127.0.0.1 als Server Adresse funktioniert nicht weil de
 Links:
 -   https://momentjs.com/
 -   https://blog.logrocket.com/react-native-maps-introduction/
+-	https://react-native-async-storage.github.io/async-storage/docs/install/
+-	https://react-native-async-storage.github.io/async-storage/docs/usage
 
 ## How To Server
 
@@ -70,6 +73,8 @@ Server starten:
 Links:
 -   https://medium.com/@onejohi/building-a-simple-rest-api-with-nodejs-and-express-da6273ed7ca9
 -   https://www.robinwieruch.de/node-express-server-rest-api
+-	https://codeforgeek.com/handle-get-post-request-express-4/
+-	https://masteringjs.io/tutorials/express/post
 
 ## How To Database
 
@@ -92,9 +97,7 @@ React native maps: https://github.com/react-native-maps/react-native-maps
 -	Screens stylen
 -   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
 -   Splash Screen erstellen
--	Drei Testusers erstellen
 -   Seite: neuen User erstellen?
--	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
 -	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
 -	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
 -	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
@@ -115,3 +118,5 @@ React native maps: https://github.com/react-native-maps/react-native-maps
 -	Wo speichern wir die JSONs mit Messungen? Sie werden über eine API geliefert. Text Dateien?
 -	Diagramm Screen – Messungen in zwei Diagrammen anzeigen
 -	Karte – wie werden Pins auf eine Karte angezeigt?
+-	Drei Testusers erstellen
+-	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
