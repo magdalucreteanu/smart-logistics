@@ -3,10 +3,9 @@ Projekt C für MOSY (Mobile Systeme)
 
 ## Projekt Struktur
 
-Das PRojekt hat drei Teile:
+Das Projekt hat zwei Teile:
 -   client - hier wird die React native App entwickelt
 -   server - simuliert den API Server der die Daten liefert
--   database - die Datenbank für Logins
 
 ## MIRO Board
 
@@ -76,17 +75,11 @@ Links:
 -	https://codeforgeek.com/handle-get-post-request-express-4/
 -	https://masteringjs.io/tutorials/express/post
 
-## How To Database
-
-Alle Skripte laufen im Ordner "database".
-
-Hier die Datenbank howtos
-
 ## Apache Echarts
 
-Hauptseite: https://echarts.apache.org/en/index.html
-Beispiele: https://echarts.apache.org/examples/en/index.html
-API Docs: https://echarts.apache.org/en/api.html#echarts
+Hauptseite: https://echarts.apache.org/en/index.html \
+Beispiele: https://echarts.apache.org/examples/en/index.html \
+API Docs: https://echarts.apache.org/en/api.html#echarts \
 React native Echarts: https://bestofreactjs.com/repo/tomLadder-react-native-echarts-wrapper-react-react-native-awesome-components 
 
 ## Karte
