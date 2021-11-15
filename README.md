@@ -77,9 +77,9 @@ Links:
 
 ## Apache Echarts
 
-Hauptseite: https://echarts.apache.org/en/index.html
-Beispiele: https://echarts.apache.org/examples/en/index.html
-API Docs: https://echarts.apache.org/en/api.html#echarts
+Hauptseite: https://echarts.apache.org/en/index.html 
+Beispiele: https://echarts.apache.org/examples/en/index.html 
+API Docs: https://echarts.apache.org/en/api.html#echarts 
 React native Echarts: https://bestofreactjs.com/repo/tomLadder-react-native-echarts-wrapper-react-react-native-awesome-components 
 
 ## Karte
