@@ -22,6 +22,10 @@ Schritte:
 	-	diesen IP Wert in serverAddress Wert in Server.js eintragen
 	-	cd client
 	-	npm start
+- Logins username/password
+	- kirsten/kirsten
+	- magda/magda
+	- max/max
 
 ## How To Client
 
