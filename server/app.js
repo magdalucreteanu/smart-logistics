@@ -23,11 +23,17 @@ app.post('/login', (req, res) => {
     }
 });
 
+app.get('/:username/containers', (req, res) => {
+    let username = req.params.username;
+    let rawdata = fs.readFileSync('data/containers_' + username + '.json');
+    let containers = JSON.parse(rawdata);
+    return res.send(containers);
+});
 
-app.get('/measurements', (req, res) => {
-    let rawdata = fs.readFileSync('data/measurements.json');
+
+app.get('/measurements/:containerNumber', (req, res) => {
+    let containerNumber = req.params.containerNumber;
+    let rawdata = fs.readFileSync('data/measurements_' + containerNumber + '.json');
     let measurements = JSON.parse(rawdata);
-    //console.log(measurements);
-
     return res.send(measurements);
 });

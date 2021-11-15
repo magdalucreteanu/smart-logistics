@@ -8,7 +8,7 @@ export default function useDatabase() {
     const [isDBLoadingComplete, setDBLoadingComplete] = useState(false);
 
     useEffect(() => {
-        async function loadDataAsync() {
+        /*async function loadDataAsync() {
           try {
           await database.dropDatabaseTablesAsync()
           await database.setupDatabaseAsync()
@@ -19,6 +19,7 @@ export default function useDatabase() {
           }
         }
         loadDataAsync()
+        */
       }, [])
 
     return isDBLoadingComplete;
