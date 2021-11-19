@@ -91,16 +91,25 @@ React native maps: https://github.com/react-native-maps/react-native-maps
 
 ## Offene Punkte (Liste nicht vollständig)
 
--	Screens stylen
+Liste 1
+-  Splash Screen erstellen
+-  App Logo finden
+-  Style für alle Seiten einführen
+-  Login Seite Bug: Passwort soll nicht sichtbar sein
+-  App Logo auf Login Seite anzeigen
+-  Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
+-  Settings wie in NASA App (mit Dark Theme) implementieren
+-  Logout Funktionalität (wird auf Login Seite navigieren)
+
+
+Liste 2
 -   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
--   Splash Screen erstellen
 -   Seite: neuen User erstellen?
 -	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
 -	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
 -	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
 -	Funktionalität der Filterfelder (z.B. Datum von und bis) auf dem Shipment Screen implementieren
 -	Nachricht Funktionalität implementieren
--	Logout Funktionalität
 
 ## Done
 -	Leeres Projekt in Github erstellt
