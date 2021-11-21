@@ -13,14 +13,16 @@ https://miro.com/app/board/o9J_lIYVFX8=/
 
 ## Anwendung starten
 Schritte:
--	Bibliotheken installieren mit npm
+-	Node installieren
 -   Server
 	-	cd server
+	-	npm install
 	-	node app.js
 -	Client
 	-	erst IP Adresse des Laptops finden (ipconfig)
 	-	diesen IP Wert in serverAddress Wert in Server.js eintragen
 	-	cd client
+	-	npm install
 	-	npm start
 - Logins username/password
 	- kirsten/kirsten
