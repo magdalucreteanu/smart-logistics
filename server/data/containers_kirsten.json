@@ -1,10 +1,18 @@
 [
     {
         "startDate": "10 Sep 2021",
-        "containerNumber": "CNT100023"
+        "containerNumber": "CNT100023",
+        "containerType": "40FT High Cube",
+        "startLocation": "Tokyo",
+        "endLocation": "Fukishima",
+        "contents": "more bananas"
     },
     {
         "startDate": "15 Sep 2021",
-        "containerNumber": "CNT100095"
+        "containerNumber": "CNT100095",
+        "containerType": "40FT General",
+        "startLocation": "Tokyo",
+        "endLocation": "Fukishima",
+        "contents": "more phones"
     }
 ]

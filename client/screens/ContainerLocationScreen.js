@@ -12,6 +12,11 @@ const ContainerLocationScreen = ({ route, navigation }) => {
     };
 
     measurements.forEach((element, index) => {
+        let description = element.temperature + '°C / ' + element.humidity + '%';
+        let pinColor = 'green';
+        if (index === 0 || index === measurements.length - 1) {
+            pinColor = 'red';
+        }
         this.state.markers.push({
             key: index,
             coordinates: {
@@ -19,7 +24,10 @@ const ContainerLocationScreen = ({ route, navigation }) => {
                 longitude: element.longitude,
                 latitudeDelta: 2,
                 longitudeDelta: 2,
-            }
+            },
+            title: element.date,
+            description: description,
+            pinColor: pinColor
         });
         this.state.polyline.push({
             latitude: element.latitude,
@@ -36,8 +44,10 @@ const ContainerLocationScreen = ({ route, navigation }) => {
                 {this.state.markers.map(marker => (
                     <MapView.Marker
                         key={marker.key}
+                        title={marker.title}
+                        description={marker.description}
                         coordinate={marker.coordinates}
-                        pinColor="green"
+                        pinColor={marker.pinColor}
                     />
                 ))}
                 {<MapView.Polyline

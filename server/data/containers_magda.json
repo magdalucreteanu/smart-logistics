@@ -1,14 +1,26 @@
 [
     {
         "startDate": "10 Sep 2021",
-        "containerNumber": "CNT100023"
+        "containerNumber": "CNT100023",
+        "containerType": "20FT General",
+        "startLocation": "Tokyo",
+        "endLocation": "Fukishima",
+        "contents": "Bananas"
     },
     {
         "startDate": "15 Sep 2021",
-        "containerNumber": "CNT100095"
+        "containerNumber": "CNT100095",
+        "containerType": "40FT General",
+        "startLocation": "Tokyo",
+        "endLocation": "Fukishima",
+        "contents": "Lots of phones"
     },
     {
         "startDate": "20 Sep 2021",
-        "containerNumber": "CNT230190"
+        "containerNumber": "CNT230190",
+        "containerType": "20FT High Cube",
+        "startLocation": "Tokyo",
+        "endLocation": "Fukishima",
+        "contents": "unknown"
     }
 ]

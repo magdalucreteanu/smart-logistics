@@ -33,9 +33,15 @@ export default ContainersScreen = ({ navigation }) => {
     }, []);
 
     const renderItem = ({ item }) => (
-        <View style={{ padding: 1 }}>
-            <Text>{item.startDate}</Text>
+        <View style={{ padding: 5, borderWidth: 1, 
+                       borderTopLeftRadius: 20, borderTopRightRadius: 20,
+                       borderBottomLeftRadius: 20, borderBottomRightRadius: 20}}>
+            <Text>Date: {item.startDate}</Text>
             <Button title={item.containerNumber} onPress={ () => pressHandler(item.containerNumber) }/>
+            <Text>Type: {item.containerType}</Text>
+            <Text>Start: {item.startLocation}</Text>
+            <Text>End: {item.endLocation}</Text>
+            <Text>Contents: {item.contents}</Text>
         </View>
     );
     
