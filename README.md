@@ -106,10 +106,6 @@ Liste 1
 
 Liste 2
 -   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
--   Seite: neuen User erstellen?
--	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
--	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
--	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
 -	Funktionalität der Filterfelder (z.B. Datum von und bis) auf dem Shipment Screen implementieren
 -	Nachricht Funktionalität implementieren
 
@@ -128,3 +124,7 @@ Liste 2
 -	Karte – wie werden Pins auf eine Karte angezeigt?
 -	Drei Testusers erstellen
 -	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
+-   Seite: neuen User erstellen?
+-	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
+-	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
+-	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
