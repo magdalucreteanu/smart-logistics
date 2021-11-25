@@ -97,7 +97,6 @@ Liste 1
 -  Splash Screen erstellen
 -  App Logo finden
 -  Style für alle Seiten einführen
--  Login Seite Bug: Passwort soll nicht sichtbar sein
 -  App Logo auf Login Seite anzeigen
 -  Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
 -  Settings wie in NASA App (mit Dark Theme) implementieren
@@ -128,3 +127,4 @@ Liste 2
 -	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
 -	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
 -	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
+-	Login Seite Bug: Passwort soll nicht sichtbar sein
