@@ -72,7 +72,7 @@ export default LoginScreen = ({ navigation }) => {
             value = {password}
             onChangeText = {passwordInputHandler}
             clearTextOnFocus = {true}
-            keyboardType = 'visible-password'
+            autoCapitalize = 'none'
         />
         <Button title="Login" onPress={pressHandler}/>
         <Text style = {errorText()}>{errorMessage}</Text>
