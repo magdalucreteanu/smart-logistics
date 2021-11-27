@@ -20,15 +20,21 @@ export default LoginScreen = ({ navigation }) => {
         setPassword(enteredText);
     };
 
+    // die login Funktion ruft die Server API auf
+    // und meldet den User an
     const login = async () => {
         try {
             // Fehlermeldung entfernen
             setErrorMessage('');
             // Login API aufrufen
+            // username und password werden in einem JSON Obket umgewandelt
             let body = JSON.stringify({
                 username: username,
                 password: password
             });
+            // wir konfigurieren den POST Request
+            // damit weiß der Server dass ein JSON String
+            // im Body des Requests gesendet wird
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -56,6 +62,7 @@ export default LoginScreen = ({ navigation }) => {
     }
 
     return (
+        // der View mit User/Password Felder wird gerendert
         <View style = {loginContainer()}>
             <Text>Login</Text>
             <TextInput 

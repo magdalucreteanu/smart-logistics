@@ -11,12 +11,17 @@ const ContainerDisplayScreen = ({ navigation }) => {
     const [containerNumber, setContainerNumber] = useState([]);
     const [measurements, setMeasurements] = useState([]);
     
+    // die Messungen für den ausgewählten Container werden geladen
     loadMeasurements = async () => {
         try {
+            // lese die containerNumber aus dem Storage
             let value = await AsyncStorage.getItem('@containerNumber');
             setContainerNumber(value);
+            // Server Request durchführen, z.B. /measurements/CNT100023
             let response = await fetch(serverAddress() + '/measurements/' + value);
+            // Das JSON aus der Response lesen
             let json = await response.json();
+            // JSON als Liste mit Measurements setzen
             setMeasurements(json);
         } catch (error) {
             Alert.alert('Error:', error.message);
@@ -30,7 +35,10 @@ const ContainerDisplayScreen = ({ navigation }) => {
 
     return (
         //Achtung: style verwendet defaultContainer
-      <View style = {defaultContainer()}> 
+
+       // die unteren onPress Funktionen geben dem nächsten Screen die
+       // geladenen Measurements als Parameters
+       <View style = {defaultContainer()}> 
             <Text style={{marginBottom: 10}}>Container {containerNumber}</Text>
             {measurements.length===0 ?
                 <Text>This container does not have any measurements.</Text>

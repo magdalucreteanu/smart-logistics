@@ -10,21 +10,27 @@ export default ContainersScreen = ({ navigation }) => {
 
     const [containers, setContainers] = useState([]);
 
+    // Die Liste mit Containers wird von Server geladen
     loadContainers = async () => {
         try {
+            // User aus Storage lesen
             let username = await AsyncStorage.getItem('@username');
-
+            // Daten aufrufen, Link ist z.B. /magda/containers
             let response = await fetch(serverAddress() + '/' + username + '/containers');
+            // JSON von Response lesen
             let json = await response.json();
+            // die Liste der Containers setzen
             setContainers(json);
         } catch (error) {
             Alert.alert('Error:', error.message);
         }
     }
 
-
+    // wird aufgerufen wann auf ein Container Button geklickt wird
     const pressHandler = async (containerNumber) => {
+        // die containerNumber in Storage speichern
         await AsyncStorage.setItem('@containerNumber', containerNumber)
+        // zum ContainerDisplayScreen navigieren
         navigation.navigate('ContainerDisplay');
     }
 
@@ -32,6 +38,7 @@ export default ContainersScreen = ({ navigation }) => {
         loadContainers();
     }, []);
 
+    // Die Container Daten werden hier gerendert
     const renderItem = ({ item }) => (
         <View style={{ padding: 5, borderWidth: 1, 
                        borderTopLeftRadius: 20, borderTopRightRadius: 20,

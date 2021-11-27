@@ -9,6 +9,8 @@ export default HomeScreen = ({ navigation }) => {
 
     init = async () => {
         try {
+            // Username aus Storage lesen
+            // Der Name wird in diesem Screen angezeigt
             let value = await AsyncStorage.getItem('@username');
             setUsername(value);
         } catch (error) {
