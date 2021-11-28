@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { Alert, Text, View, TouchableOpacity } from 'react-native';
+import { Alert, Text, View, TouchableOpacity, BackHandler } from 'react-native';
 import { Button } from "react-native-elements";
 import {homeTileContainer, homeTileText} from '../constants/LayoutStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -9,6 +9,21 @@ import Colors from '../constants/Colors';
 export default HomeScreen = ({ navigation }) => {
 
     const [username, setUsername] = useState('');
+
+    init = async () => {
+        try {
+            // Username aus Storage lesen
+            // Der Name wird in diesem Screen angezeigt
+            let value = await AsyncStorage.getItem('@username');
+            setUsername(value);
+        } catch (error) {
+            Alert.alert('Error:', error.message);
+        }
+    }
+    
+    useEffect(() => {
+        init();
+    }, []);
 
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
@@ -31,32 +46,17 @@ export default HomeScreen = ({ navigation }) => {
           ),
         });
       }, [navigation]);
-      
-
-    init = async () => {
-        try {
-            // Username aus Storage lesen
-            // Der Name wird in diesem Screen angezeigt
-            let value = await AsyncStorage.getItem('@username');
-            setUsername(value);
-        } catch (error) {
-            Alert.alert('Error:', error.message);
-        }
-    }
-    
-    useEffect(() => {
-        init();
-    }, []);
 
     const pressLogoutHandler = () => {
         // Benutzer fragen, ob Logout wirklich stattfinden soll
         Alert.alert(
             "Logout", 
-            `You are currently logged in as ${username}. Do you really want to log out?`,
+            `Do you really want to log out?`,
             [
                 // Canceln wenn es nicht stattfinden soll
                 {
                     text: "Cancel",
+                    oonPress: () => null,
                     style: "cancel"
                 },
                 // Wenn stattfinden soll, dann Navigation zum Login Screen
@@ -64,9 +64,14 @@ export default HomeScreen = ({ navigation }) => {
                     text: "Log out",
                     onPress: () =>  navigation.navigate('Login')
                 }
-            ]
-            )
-    }
+            ]);
+        return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+        "hardwareBackPress",
+        pressLogoutHandler
+    );
 
     return (
         <View style = {{flex:1}}>

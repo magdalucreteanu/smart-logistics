@@ -26,7 +26,7 @@ const SettingsScreen = ({ navigation }) => {
         // Benutzer fragen, ob Logout wirklich stattfinden soll
         Alert.alert(
             "Logout", 
-            `You are currently logged in as ${username}. Do you really want to log out?`,
+            `Do you really want to log out?`,
             [
                 // Canceln wenn es nicht stattfinden soll
                 {
