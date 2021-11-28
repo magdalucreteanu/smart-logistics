@@ -10,26 +10,6 @@ export default HomeScreen = ({ navigation }) => {
 
     const [username, setUsername] = useState('');
 
-    const pressLogoutHandler = () => {
-        // Benutzer fragen, ob Logout wirklich stattfinden soll
-        Alert.alert(
-            "Logout", 
-            `You are currently logged in as ${username}. Do you really want to log out?`,
-            [
-                // Canceln wenn es nicht stattfinden soll
-                {
-                    text: "Cancel",
-                    style: "cancel"
-                },
-                // Wenn stattfinden soll, dann Navigation zum Login Screen
-                {
-                    text: "Log out",
-                    onPress: () =>  navigation.navigate('Login')
-                }
-            ]
-            )
-    }
-
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -67,6 +47,26 @@ export default HomeScreen = ({ navigation }) => {
     useEffect(() => {
         init();
     }, []);
+
+    const pressLogoutHandler = () => {
+        // Benutzer fragen, ob Logout wirklich stattfinden soll
+        Alert.alert(
+            "Logout", 
+            `You are currently logged in as ${username}. Do you really want to log out?`,
+            [
+                // Canceln wenn es nicht stattfinden soll
+                {
+                    text: "Cancel",
+                    style: "cancel"
+                },
+                // Wenn stattfinden soll, dann Navigation zum Login Screen
+                {
+                    text: "Log out",
+                    onPress: () =>  navigation.navigate('Login')
+                }
+            ]
+            )
+    }
 
     return (
         <View style = {{flex:1}}>
