@@ -10,6 +10,26 @@ export default HomeScreen = ({ navigation }) => {
 
     const [username, setUsername] = useState('');
 
+    const pressLogoutHandler = () => {
+        // Benutzer fragen, ob Logout wirklich stattfinden soll
+        Alert.alert(
+            "Logout", 
+            `You are currently logged in as ${username}. Do you really want to log out?`,
+            [
+                // Canceln wenn es nicht stattfinden soll
+                {
+                    text: "Cancel",
+                    style: "cancel"
+                },
+                // Wenn stattfinden soll, dann Navigation zum Login Screen
+                {
+                    text: "Log out",
+                    onPress: () =>  navigation.navigate('Login')
+                }
+            ]
+            )
+    }
+
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -22,8 +42,16 @@ export default HomeScreen = ({ navigation }) => {
               onPress={() => navigation.navigate('Settings')}
             />
           ),
+          headerLeft: () => (
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'log-out' size = {32} color = {Colors.headerIconColor} style={{ transform: [{scaleX: -1}] }} />}
+              onPress={pressLogoutHandler}
+            />
+          ),
         });
       }, [navigation]);
+      
 
     init = async () => {
         try {
