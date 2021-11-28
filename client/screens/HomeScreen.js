@@ -41,37 +41,39 @@ export default HomeScreen = ({ navigation }) => {
             <Button
               type= 'clear'
               icon={<Ionicons name = 'log-out' size = {32} color = {Colors.headerIconColor} style={{ transform: [{scaleX: -1}] }} />}
-              onPress={pressLogoutHandler}
+              onPress={() => navigation.goBack()}
             />
           ),
         });
       }, [navigation]);
 
-    const pressLogoutHandler = () => {
-        // Benutzer fragen, ob Logout wirklich stattfinden soll
-        Alert.alert(
-            "Logout", 
-            `Do you really want to log out?`,
-            [
-                // Canceln wenn es nicht stattfinden soll
-                {
-                    text: "Cancel",
-                    oonPress: () => null,
-                    style: "cancel"
-                },
-                // Wenn stattfinden soll, dann Navigation zum Login Screen
-                {
-                    text: "Log out",
-                    onPress: () =>  navigation.navigate('Login')
-                }
-            ]);
-        return true;
-    };
 
-    const backHandler = BackHandler.addEventListener(
-        "hardwareBackPress",
-        pressLogoutHandler
-    );
+    // Verhindert, dass der User sich durch das Klicken auf den "Zurück"-Button versehentlich ausloggen kann
+    React.useEffect(
+        () =>
+          navigation.addListener('beforeRemove', (e) => {
+    
+            // Prevent default behavior of leaving the screen
+            e.preventDefault();
+    
+            // Prompt the user before leaving the screen
+            Alert.alert(
+              'Logout?',
+              'Do you really want to log out?',
+              [
+                { text: "Cancel", style: 'cancel', onPress: () => {} },
+                {
+                  text: 'Log out',
+                  style: 'default',
+                  // If the user confirmed, then we dispatch the action we blocked earlier
+                  // This will continue the action that had triggered the removal of the screen
+                  onPress: () => navigation.dispatch(e.data.action),
+                },
+              ]
+            );
+          }),
+        [navigation]
+      );
 
     return (
         <View style = {{flex:1}}>

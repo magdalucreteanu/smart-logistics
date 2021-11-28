@@ -1,11 +1,12 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { Text, View, TextInput } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, Input } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Colors from '../constants/Colors';
+import { Ionicons } from "@expo/vector-icons";
 
 // Constants
-import { errorText, loginContainer, loginInputContainer } from '../constants/LayoutStyles';
+import { errorText, loginContainer, titleText, baseText } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 
 export default LoginScreen = ({ navigation }) => {
@@ -73,25 +74,34 @@ export default LoginScreen = ({ navigation }) => {
     return (
         // der View mit User/Password Felder wird gerendert
         <View style = {loginContainer()}>
-            <Text>Login</Text>
-            <TextInput 
-                style = {loginInputContainer()}
+            <Text style={titleText()}>Login</Text>
+            <Input 
+                style = {baseText()}
+                leftIcon= {<Ionicons name = 'person-outline' size = {32} color = {Colors.headerIconColor} />}
                 placeholder = "USER"
                 value = {username}
                 onChangeText = {usernameInputHandler}
-            clearTextOnFocus = {true}
-        />
-        <TextInput
-            style = {loginInputContainer()} 
-            placeholder = "PASSWORD" 
-            secureTextEntry = {true} 
-            value = {password}
-            onChangeText = {passwordInputHandler}
-            clearTextOnFocus = {true}
-            autoCapitalize = 'none'
-        />
-        <Button title="Login" onPress={pressHandler}/>
-        <Text style = {errorText()}>{errorMessage}</Text>
-    </View>
+                clearTextOnFocus = {true}
+                autoCapitalize = 'none'
+            />
+            <Input
+                style = {baseText()}
+                leftIcon= {<Ionicons name = 'lock-closed-outline' size = {32} color = {Colors.headerIconColor} />}
+                placeholder = "PASSWORD" 
+                secureTextEntry = {true} 
+                value = {password}
+                onChangeText = {passwordInputHandler}
+                clearTextOnFocus = {true}
+                autoCapitalize = 'none'
+            />
+            <Button 
+                title="Login" 
+                titleStyle={[baseText(), {color: 'white'}]}
+                buttonStyle={{backgroundColor: Colors.accentColor}}
+                onPress={pressHandler}
+                icon= {<Ionicons name = 'log-in' size = {32} color = {'white'} />}
+            />
+            <Text style = {errorText()}>{errorMessage}</Text>
+        </View>
   );
 };

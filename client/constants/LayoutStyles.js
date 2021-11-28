@@ -1,20 +1,34 @@
+export const baseText = () => {
+    return {
+        color: 'black',
+        fontSize: 20,
+    }
+};
+
+export const titleText = () => {
+    return {
+        color: 'black',
+        fontSize: 24,
+        marginBottom: 10,
+        fontWeight: 'bold'
+    }
+};
+
+export const errorText = () => {
+    return {
+        color: 'red',
+        textAlign: 'center',
+        fontSize: 20,
+        paddingTop: 20
+    }
+};
+
 export const loginContainer = () => {
     return {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 30
-    }
-};
-
-export const loginInputContainer = () => {
-    return {
-        borderColor: 'gray', 
-        textAlign: 'center',
-        borderWidth: 1,
-        margin: 10,
-        fontWeight: 'normal',
-        width: 140,
+        padding: 50,
     }
 };
 
@@ -50,13 +64,6 @@ export const homeTileText = () => {
     return {
         fontSize: 18,
         fontWeight: 'bold',
-        textAlign: 'center',
-    }
-};
-
-export const errorText = () => {
-    return {
-        color: 'red',
         textAlign: 'center',
     }
 };
