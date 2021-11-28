@@ -1,11 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Alert, Text, View, TouchableOpacity } from 'react-native';
+import { Button } from "react-native-elements";
 import {homeTileContainer, homeTileText} from '../constants/LayoutStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Ionicons } from "@expo/vector-icons";
+import Colors from '../constants/Colors';
 
 export default HomeScreen = ({ navigation }) => {
 
     const [username, setUsername] = useState('');
+
+    // Navigation Header bearbeiten
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerTintColor: Colors.headerTextColor,
+          headerTitle: 'Home',
+          headerRight: () => (
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Settings')}
+            />
+          ),
+        });
+      }, [navigation]);
 
     init = async () => {
         try {

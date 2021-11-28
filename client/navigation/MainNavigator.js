@@ -9,6 +9,7 @@ import ContainerDisplayScreen from '../screens/ContainerDisplayScreen';
 import ContainerLocationScreen from '../screens/ContainerLocationScreen';
 import ContainerEnvironmentScreen from '../screens/ContainerEnvironmentScreen';
 import ContainerMessageScreen from '../screens/ContainerMessageScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default MainNavigator = () => {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Login" component={LoginScreen} />
+                <Stack.Screen name="Settings" component={SettingsScreen} options={{headerTitle: 'Settings'}}/>
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="News" component={NewsScreen} />
                 <Stack.Screen name="Containers" component={ContainersScreen} />

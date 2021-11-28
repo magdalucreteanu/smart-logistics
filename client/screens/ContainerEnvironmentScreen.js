@@ -1,8 +1,26 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import { View, StyleSheet } from 'react-native';
 import { ECharts } from "react-native-echarts-wrapper";
+import { Button } from "react-native-elements";
+import { Ionicons } from "@expo/vector-icons";
+import Colors from '../constants/Colors';
 
 const ContainerEnvironmentScreen = ({ route, navigation }) => {
+
+    // Navigation Header bearbeiten
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerTintColor: Colors.headerTextColor,
+          headerTitle: 'Container Environment',
+          headerRight: () => (
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Settings')}
+            />
+          ),
+        });
+      }, [navigation]);
 
     // die Measurements wurden im vorherigen Screend geladen
     // und wurden an diesem Screen weitergegeben

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import { Alert, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { Ionicons } from "@expo/vector-icons";
+import Colors from '../constants/Colors';
 import { defaultContainer } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 
@@ -11,6 +12,21 @@ const ContainerDisplayScreen = ({ navigation }) => {
     const [containerNumber, setContainerNumber] = useState([]);
     const [measurements, setMeasurements] = useState([]);
     
+    // Navigation Header bearbeiten
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerTintColor: Colors.headerTextColor,
+          headerTitle: 'Container Display',
+          headerRight: () => (
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Settings')}
+            />
+          ),
+        });
+      }, [navigation]);
+
     // die Messungen für den ausgewählten Container werden geladen
     loadMeasurements = async () => {
         try {

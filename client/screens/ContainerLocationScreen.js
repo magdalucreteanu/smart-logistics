@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import { View, StyleSheet } from 'react-native';
 import MapView from 'react-native-maps';
+import { Button } from "react-native-elements";
+import { Ionicons } from "@expo/vector-icons";
+import Colors from '../constants/Colors';
 
 const ContainerLocationScreen = ({ route, navigation }) => {
 
@@ -12,6 +15,21 @@ const ContainerLocationScreen = ({ route, navigation }) => {
         markers: [],
         polyline: []
     };
+
+    // Navigation Header bearbeiten
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerTintColor: Colors.headerTextColor,
+          headerTitle: 'Container Location',
+          headerRight: () => (
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Settings')}
+            />
+          ),
+        });
+      }, [navigation]);
 
     measurements.forEach((element, index) => {
         // description ist der Text der in Tooltip angezeigt wird

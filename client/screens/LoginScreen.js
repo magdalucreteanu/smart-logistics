@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Text, View, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Colors from '../constants/Colors';
 
 // Constants
 import { errorText, loginContainer, loginInputContainer } from '../constants/LayoutStyles';
@@ -19,6 +20,14 @@ export default LoginScreen = ({ navigation }) => {
     const passwordInputHandler = enteredText => {
         setPassword(enteredText);
     };
+
+    // Navigation Header bearbeiten
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerTintColor: Colors.headerTextColor,
+          headerTitle: 'Login',
+        });
+      }, [navigation]);
 
     // die login Funktion ruft die Server API auf
     // und meldet den User an

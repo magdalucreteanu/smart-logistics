@@ -1,14 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import { Alert, FlatList, SafeAreaView, Text, View } from 'react-native';
 import {defaultContainer} from '../constants/LayoutStyles';
 import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { Ionicons } from "@expo/vector-icons";
+import Colors from '../constants/Colors';
 import { serverAddress } from '../constants/Server';
 
 export default ContainersScreen = ({ navigation }) => {
 
     const [containers, setContainers] = useState([]);
+
+    // Navigation Header bearbeiten
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerTintColor: Colors.headerTextColor,
+          headerTitle: 'Containers',
+          headerRight: () => (
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Settings')}
+            />
+          ),
+        });
+      }, [navigation]);
 
     // Die Liste mit Containers wird von Server geladen
     loadContainers = async () => {
