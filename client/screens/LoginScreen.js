@@ -22,14 +22,6 @@ export default LoginScreen = ({ navigation }) => {
         setPassword(enteredText);
     };
 
-    // Navigation Header bearbeiten
-    useLayoutEffect(() => {
-        navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
-          headerTitle: 'Login',
-        });
-      }, [navigation]);
-
     // die login Funktion ruft die Server API auf
     // und meldet den User an
     const login = async () => {

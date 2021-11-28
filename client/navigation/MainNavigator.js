@@ -17,7 +17,7 @@ export default MainNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Login" component={LoginScreen} />
+                <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
                 <Stack.Screen name="Settings" component={SettingsScreen} options={{headerTitle: 'Settings'}}/>
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="News" component={NewsScreen} />
