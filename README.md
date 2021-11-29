@@ -106,25 +106,25 @@ Liste 2
 -	Nachricht Funktionalität implementieren
 
 ## Done
--	Leeres Projekt in Github erstellt
--   	App erstellt
--   	Login-, Home-, News-, Containers-, ContainerDisplay-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
--   	Navigation zwischen den Screens
--   	database.js und useDatabase.js erstellt mit SQLite als Datenbank und der Tabelle "users"
--   	Testuser "John" mit dem Passwort "geheim" erstellt
--	Diagramm - Bibliothek für die Anzeige von Diagrammen finden
--	Karte - API Key für Google Maps beantragen. Google Cloud Konto benötigt?
--	Struktur des JSON Strings definieren (inkl. Position auf der Karte – Longitude & Latitude)
--	Wo speichern wir die JSONs mit Messungen? Sie werden über eine API geliefert. Text Dateien?
--	Diagramm Screen – Messungen in zwei Diagrammen anzeigen
--	Karte – wie werden Pins auf eine Karte angezeigt?
--	Drei Testusers erstellen
--	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
--   	Seite: neuen User erstellen?
--	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
--	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
--	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
--	Login Seite Bug: Passwort soll nicht sichtbar sein
--	Splash Screen erstellen
--  	App Logo finden
--  	App Logo auf Login Seite anzeigen
+- Leeres Projekt in Github erstellt
+- App erstellt
+- Login-, Home-, News-, Containers-, ContainerDisplay-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
+- Navigation zwischen den Screens
+- database.js und useDatabase.js erstellt mit SQLite als Datenbank und der Tabelle "users"
+- Testuser "John" mit dem Passwort "geheim" erstellt
+- Diagramm - Bibliothek für die Anzeige von Diagrammen finden
+- Karte - API Key für Google Maps beantragen. Google Cloud Konto benötigt?
+- Struktur des JSON Strings definieren (inkl. Position auf der Karte – Longitude & Latitude)
+- Wo speichern wir die JSONs mit Messungen? Sie werden über eine API geliefert. Text Dateien?
+- Diagramm Screen – Messungen in zwei Diagrammen anzeigen
+- Karte – wie werden Pins auf eine Karte angezeigt?
+- Drei Testusers erstellen
+- Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
+- Seite: neuen User erstellen?
+- Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
+- Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
+- Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
+- Login Seite Bug: Passwort soll nicht sichtbar sein
+- Splash Screen erstellen
+- App Logo finden
+- App Logo auf Login Seite anzeigen
