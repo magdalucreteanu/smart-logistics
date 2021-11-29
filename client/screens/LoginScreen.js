@@ -1,11 +1,9 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { Button, Input } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Colors from '../constants/Colors';
 import { Ionicons } from "@expo/vector-icons";
-
-// Constants
 import { errorText, loginContainer, titleText, baseText } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 
@@ -66,7 +64,8 @@ export default LoginScreen = ({ navigation }) => {
     return (
         // der View mit User/Password Felder wird gerendert
         <View style = {loginContainer()}>
-            <Text style={titleText()}>Login</Text>
+            <Image style={{width:300, height:300}} resizeMode='contain' source={require('../assets/LogoWithText.png')} />
+            <Text style={[titleText(), {marginBottom:10}]}>Login</Text>
             <Input 
                 style = {baseText()}
                 leftIcon= {<Ionicons name = 'person-outline' size = {32} color = {Colors.headerIconColor} />}
@@ -89,7 +88,7 @@ export default LoginScreen = ({ navigation }) => {
             <Button 
                 title="Login" 
                 titleStyle={[baseText(), {color: 'white'}]}
-                buttonStyle={{backgroundColor: Colors.accentColor}}
+                buttonStyle={{backgroundColor: Colors.stylingColor03}}
                 onPress={pressHandler}
                 icon= {<Ionicons name = 'log-in' size = {32} color = {'white'} />}
             />

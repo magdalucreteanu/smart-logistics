@@ -1,3 +1,5 @@
+import Colors from "./Colors";
+
 export const baseText = () => {
     return {
         color: 'black',
@@ -9,7 +11,14 @@ export const titleText = () => {
     return {
         color: 'black',
         fontSize: 24,
-        marginBottom: 10,
+        fontWeight: 'bold'
+    }
+};
+
+export const tileText = () => {
+    return {
+        color: Colors.stylingColor03,
+        fontSize: 30,
         fontWeight: 'bold'
     }
 };
@@ -45,11 +54,13 @@ export const defaultContainer = () => {
 export const homeTileContainer = () => {
     return {
         flex: 1,
+        flexDirection: 'row',
         margin: 30,
-        padding: 15,
+        paddingVertical: 15,
+        paddingHorizontal: 20,
         height: 100,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         backgroundColor: 'white',
         borderRadius: 10,
         shadowColor: 'black',
@@ -57,13 +68,5 @@ export const homeTileContainer = () => {
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 10,
         elevation: 8,
-    }
-};
-
-export const homeTileText = () => {
-    return {
-        fontSize: 18,
-        fontWeight: 'bold',
-        textAlign: 'center',
     }
 };
