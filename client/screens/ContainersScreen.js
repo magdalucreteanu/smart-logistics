@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-import { Alert, FlatList, SafeAreaView, Text, View } from 'react-native';
-import {defaultContainer} from '../constants/LayoutStyles';
+import { Alert, FlatList, SafeAreaView, Text, View, TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
 import { serverAddress } from '../constants/Server';
+import {containersTileContainer, baseText, tileText} from '../constants/LayoutStyles';
 
 export default ContainersScreen = ({ navigation }) => {
 
@@ -56,24 +56,24 @@ export default ContainersScreen = ({ navigation }) => {
 
     // Die Container Daten werden hier gerendert
     const renderItem = ({ item }) => (
-        <View style={{ padding: 5, borderWidth: 1, 
-                       borderTopLeftRadius: 20, borderTopRightRadius: 20,
-                       borderBottomLeftRadius: 20, borderBottomRightRadius: 20}}>
-            <Text>Date: {item.startDate}</Text>
-            <Button title={item.containerNumber} onPress={ () => pressHandler(item.containerNumber) }/>
-            <Text>Type: {item.containerType}</Text>
-            <Text>Start: {item.startLocation}</Text>
-            <Text>End: {item.endLocation}</Text>
-            <Text>Contents: {item.contents}</Text>
-        </View>
+        <TouchableOpacity onPress={ () => pressHandler(item.containerNumber) } style={containersTileContainer()}>
+            <Text style={tileText()}>{item.containerNumber}</Text>
+            <Text style={baseText()}>Date: {item.startDate}</Text>
+            <Text style={baseText()}>Type: {item.containerType}</Text>
+            <Text style={baseText()}>Start: {item.startLocation}</Text>
+            <Text style={baseText()}>End: {item.endLocation}</Text>
+            <Text style={baseText()}>Contents: {item.contents}</Text>
+        </TouchableOpacity>
     );
     
     return (
         //Achtung: style verwendet defaultContainer
-        <View style = {defaultContainer()}>
-            <SafeAreaView style = {defaultContainer()}>
+        <View style = {{flex:1}}>
+            <SafeAreaView style = {{flex:1}}>
                 {containers.length===0 ?
-                <Text>You have no containers.</Text>
+                <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                    <Text style={baseText()}>You have no containers.</Text>
+                </View>
                 :
                 <FlatList
                     data={containers}

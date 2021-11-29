@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-import { Alert, Text, View } from 'react-native';
+import { Alert, Text, View, TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
-import { defaultContainer } from '../constants/LayoutStyles';
+import { titleText, tileText, baseText, homeTileContainer } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 
 const ContainerDisplayScreen = ({ navigation }) => {
@@ -54,15 +54,28 @@ const ContainerDisplayScreen = ({ navigation }) => {
 
        // die unteren onPress Funktionen geben dem nächsten Screen die
        // geladenen Measurements als Parameters
-       <View style = {defaultContainer()}> 
-            <Text style={{marginBottom: 10}}>Container {containerNumber}</Text>
+       <View style = {{flex:1}}> 
+          <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={[titleText(), {marginTop: 10}]}>Container {containerNumber}</Text>
+            </View>
             {measurements.length===0 ?
-                <Text>This container does not have any measurements.</Text>
+                <View style={{flex: 7, alignItems: 'center', justifyContent: 'center'}}>
+                <Text style={baseText()}>This container does not have any measurements.</Text>
+                </View>
                 :
-                <View>
-                    <Button title="Location" onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}/>
-                    <Button title="Environment" onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}/>
-                    <Button title="Message" onPress={() => {navigation.navigate('ContainerMessage')}}/>
+                <View style ={{flex:7}}>
+                    <TouchableOpacity style={homeTileContainer()} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
+                      <Text style={tileText()}>Location</Text>
+                      <Ionicons name = 'location' size = {80} color = {Colors.stylingColor04} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={homeTileContainer()} onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}>
+                      <Text style={tileText()}>Environment</Text>
+                      <Ionicons name = 'cloud' size = {80} color = {Colors.stylingColor04} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={homeTileContainer()} onPress={() => {navigation.navigate('ContainerMessage')}}>
+                      <Text style={tileText()}>Message</Text>
+                      <Ionicons name = 'chatbox' size = {80} color = {Colors.stylingColor04} />
+                    </TouchableOpacity>
                 </View>
             }
             </View>

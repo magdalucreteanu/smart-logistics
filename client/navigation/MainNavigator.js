@@ -10,13 +10,17 @@ import ContainerLocationScreen from '../screens/ContainerLocationScreen';
 import ContainerEnvironmentScreen from '../screens/ContainerEnvironmentScreen';
 import ContainerMessageScreen from '../screens/ContainerMessageScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import {headerTheme, headerText} from '../constants/LayoutStyles'
 
 const Stack = createStackNavigator();
 
 export default MainNavigator = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{
+                headerStyle: headerTheme(),
+                headerTitleStyle: headerText()
+            }}>
                 <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
                 <Stack.Screen name="Settings" component={SettingsScreen} options={{headerTitle: 'Settings'}}/>
                 <Stack.Screen name="Home" component={HomeScreen} />

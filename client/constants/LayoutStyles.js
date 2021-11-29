@@ -1,5 +1,6 @@
 import Colors from "./Colors";
 
+// Textarten
 export const baseText = () => {
     return {
         color: 'black',
@@ -32,6 +33,21 @@ export const errorText = () => {
     }
 };
 
+export const headerText = () => {
+    return {
+        fontSize: 25,
+        color: Colors.stylingColor01,
+    }
+};
+
+// Header
+export const headerTheme = () => {
+    return {
+        backgroundColor: 'white',
+    }
+};
+
+
 export const loginContainer = () => {
     return {
         flex: 1,
@@ -61,6 +77,21 @@ export const homeTileContainer = () => {
         height: 100,
         alignItems: 'center',
         justifyContent: 'space-between',
+        backgroundColor: 'white',
+        borderRadius: 10,
+        shadowColor: 'black',
+        shadowOpacity: 0.25,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 10,
+        elevation: 8,
+    }
+};
+
+export const containersTileContainer = () => {
+    return {
+        flex: 1,
+        margin: 20,
+        padding: 15,
         backgroundColor: 'white',
         borderRadius: 10,
         shadowColor: 'black',

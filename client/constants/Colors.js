@@ -1,6 +1,6 @@
 export default {
     // Header Farben
-    headerIconColor: 'black',
+    headerIconColor: '#012A4A',
     headerTextColor: 'black',
 
     // Styling Farben, momentan verschiedene Blautöne
