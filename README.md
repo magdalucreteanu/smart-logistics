@@ -94,10 +94,7 @@ React native maps: https://github.com/react-native-maps/react-native-maps
 ## Offene Punkte (Liste nicht vollständig)
 
 Liste 1
--  Splash Screen erstellen
--  App Logo finden
 -  Style für alle Seiten einführen
--  App Logo auf Login Seite anzeigen
 -  Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
 -  Settings wie in NASA App (mit Dark Theme) implementieren
 -  Logout Funktionalität (wird auf Login Seite navigieren)
@@ -110,11 +107,11 @@ Liste 2
 
 ## Done
 -	Leeres Projekt in Github erstellt
--   App erstellt
--   Login-, Home-, News-, Containers-, ContainerDisplay-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
--   Navigation zwischen den Screens
--   database.js und useDatabase.js erstellt mit SQLite als Datenbank und der Tabelle "users"
--   Testuser "John" mit dem Passwort "geheim" erstellt
+-   	App erstellt
+-   	Login-, Home-, News-, Containers-, ContainerDisplay-, ContainerLocation-, ContainerEnvironment- und ContainerMessage-Screen erstellt
+-   	Navigation zwischen den Screens
+-   	database.js und useDatabase.js erstellt mit SQLite als Datenbank und der Tabelle "users"
+-   	Testuser "John" mit dem Passwort "geheim" erstellt
 -	Diagramm - Bibliothek für die Anzeige von Diagrammen finden
 -	Karte - API Key für Google Maps beantragen. Google Cloud Konto benötigt?
 -	Struktur des JSON Strings definieren (inkl. Position auf der Karte – Longitude & Latitude)
@@ -123,8 +120,11 @@ Liste 2
 -	Karte – wie werden Pins auf eine Karte angezeigt?
 -	Drei Testusers erstellen
 -	Login Funktionalität implementieren (ähnlich wie in Stickers Projekt – aber mit React)
--   Seite: neuen User erstellen?
+-   	Seite: neuen User erstellen?
 -	Tabelle Containers anlegen – User Referenz nicht vergessen, jedes Shipment gehört einem einzelnen User
 -	Test Containers für zwei von den Test users erstellen. Der dritte User hat keine Containers.
 -	Containers Screen erstellen.  Die Liste mit Containers wird hier angezeigt. Es kommt eine Infomeldung, falls der User keine Containers hat.
 -	Login Seite Bug: Passwort soll nicht sichtbar sein
+-	Splash Screen erstellen
+-  	App Logo finden
+-  	App Logo auf Login Seite anzeigen
