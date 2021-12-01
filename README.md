@@ -97,7 +97,6 @@ Liste 1
 -  Style für alle Seiten einführen
 -  Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
 -  Settings wie in NASA App (mit Dark Theme) implementieren
--  Logout Funktionalität (wird auf Login Seite navigieren)
 
 
 Liste 2
@@ -128,3 +127,6 @@ Liste 2
 - Splash Screen erstellen
 - App Logo finden
 - App Logo auf Login Seite anzeigen
+- Login mit useContext(AuthContext) und signIn(username)
+- Speichern der Login-Daten (AsyncStorage), automatisches Login beim nächsten Öffnen der App
+- Logout Funktionalität (wird auf Login Seite navigieren) mit useContext(AuthContext) und signOut()
