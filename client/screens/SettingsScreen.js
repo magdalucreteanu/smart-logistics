@@ -22,40 +22,6 @@ const SettingsScreen = ({ navigation }) => {
         setSwitchValue(!switchValue)
     };
 
-    const pressHandler = () => {
-        // Benutzer fragen, ob Logout wirklich stattfinden soll
-        Alert.alert(
-            "Logout", 
-            `Do you really want to log out?`,
-            [
-                // Canceln wenn es nicht stattfinden soll
-                {
-                    text: "Cancel",
-                    style: "cancel"
-                },
-                // Wenn stattfinden soll, dann Navigation zum Login Screen
-                {
-                    text: "Log out",
-                    onPress: () =>  navigation.navigate('Login')
-                }
-            ]
-            )
-    }
-
-    init = async () => {
-        try {
-            // Username aus Storage lesen
-            // Der Name wird in diesem Screen angezeigt
-            let value = await AsyncStorage.getItem('@username');
-            setUsername(value);
-        } catch (error) {
-            Alert.alert('Error:', error.message);
-        }
-    }
-    
-    useEffect(() => {
-        init();
-    }, []);    
 
     return (
         //Achtung: style verwendet defaultContainer
@@ -66,10 +32,6 @@ const SettingsScreen = ({ navigation }) => {
             onValueChange={toggleSwitch}
             value={switchValue}
             />
-        </View>
-        <View style ={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-          <Text style={{marginBottom: 10}}>You are logged in as {username}</Text>
-          <Button title="Logout" onPress={pressHandler}/>
         </View>
       </View>
     );

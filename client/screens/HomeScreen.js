@@ -1,14 +1,17 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 import { Alert, Text, View, TouchableOpacity, BackHandler } from 'react-native';
 import { Button } from "react-native-elements";
 import {homeTileContainer, baseText, titleText, tileText} from '../constants/LayoutStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AuthContext } from '../components/authContext';
 import { Ionicons, Feather } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
 
 export default HomeScreen = ({ navigation }) => {
 
     const [username, setUsername] = useState('');
+
+    const { signOut } = useContext(AuthContext);
 
     init = async () => {
         try {
@@ -24,6 +27,26 @@ export default HomeScreen = ({ navigation }) => {
     useEffect(() => {
         init();
     }, []);
+
+    const pressHandler = () => {
+      // Benutzer fragen, ob Logout wirklich stattfinden soll
+      Alert.alert(
+          "Logout", 
+          `Do you really want to log out?`,
+          [
+              // Canceln wenn es nicht stattfinden soll
+              {
+                  text: "Cancel",
+                  style: "cancel"
+              },
+              // Wenn stattfinden soll, dann Navigation zum Login Screen
+              {
+                  text: "Log out",
+                  onPress: () =>  {signOut()}
+              }
+          ]
+          )
+    }
 
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
@@ -41,39 +64,11 @@ export default HomeScreen = ({ navigation }) => {
             <Button
               type= 'clear'
               icon={<Ionicons name = 'log-out' size = {32} color = {Colors.headerIconColor} style={{ transform: [{scaleX: -1}] }} />}
-              onPress={() => navigation.goBack()}
+              onPress={pressHandler}
             />
           ),
         });
       }, [navigation]);
-
-
-    // Verhindert, dass der User sich durch das Klicken auf den "Zurück"-Button versehentlich ausloggen kann
-    React.useEffect(
-        () =>
-          navigation.addListener('beforeRemove', (e) => {
-    
-            // Prevent default behavior of leaving the screen
-            e.preventDefault();
-    
-            // Prompt the user before leaving the screen
-            Alert.alert(
-              'Logout?',
-              'Do you really want to log out?',
-              [
-                { text: "Cancel", style: 'cancel', onPress: () => {} },
-                {
-                  text: 'Log out',
-                  style: 'default',
-                  // If the user confirmed, then we dispatch the action we blocked earlier
-                  // This will continue the action that had triggered the removal of the screen
-                  onPress: () => navigation.dispatch(e.data.action),
-                },
-              ]
-            );
-          }),
-        [navigation]
-      );
 
     return (
         <View style = {{flex:1}}>

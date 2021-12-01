@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useContext } from 'react';
 import { Text, View, Image } from 'react-native';
 import { Button, Input } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -6,11 +6,14 @@ import Colors from '../constants/Colors';
 import { Ionicons } from "@expo/vector-icons";
 import { errorText, loginContainer, titleText, baseText } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
+import { AuthContext } from '../components/authContext';
 
 export default LoginScreen = ({ navigation }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+
+    const { signIn } = useContext(AuthContext);
 
     const usernameInputHandler = enteredText => {
         setUsername(enteredText);
@@ -44,9 +47,10 @@ export default LoginScreen = ({ navigation }) => {
             if (response.status == 200) {                
                 // Login ist erfolgreich
                 // User in Storage speichern
-                await AsyncStorage.setItem('@username', username)
+                // await AsyncStorage.setItem('@username', username)
                 // zu Home navigieren
-                navigation.navigate('Home');
+                // navigation.navigate('Home');
+                signIn(username);
             } else {
                 // Login nicht erfolgreich - Fehlermeldung
                 setErrorMessage('Could not login: invalid user name or password.');
