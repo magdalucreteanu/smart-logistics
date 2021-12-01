@@ -13,6 +13,7 @@ export default LoginScreen = ({ navigation }) => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
+    // useContext verwenden, um auf signIn zugreifen zu können
     const { signIn } = useContext(AuthContext);
 
     const usernameInputHandler = enteredText => {
@@ -46,10 +47,6 @@ export default LoginScreen = ({ navigation }) => {
             let response = await fetch(serverAddress() + '/login', requestOptions);
             if (response.status == 200) {                
                 // Login ist erfolgreich
-                // User in Storage speichern
-                // await AsyncStorage.setItem('@username', username)
-                // zu Home navigieren
-                // navigation.navigate('Home');
                 signIn(username);
             } else {
                 // Login nicht erfolgreich - Fehlermeldung
