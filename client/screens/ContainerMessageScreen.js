@@ -4,6 +4,7 @@ import {defaultContainer} from '../constants/LayoutStyles';
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
+import {baseText, titleText} from '../constants/LayoutStyles';
 
 const ContainerMessageScreen = ({ navigation }) => {
 
@@ -25,7 +26,7 @@ const ContainerMessageScreen = ({ navigation }) => {
     return (
         //Achtung: style verwendet defaultContainer
       <View style = {defaultContainer()}> 
-          <Text>Container Message</Text>
+          <Text style={baseText()}>Container Message</Text>
       </View>
     );
 };

@@ -45,7 +45,7 @@ const ContainerDisplayScreen = ({ navigation }) => {
     }
 
     useEffect(() => {
-        init();
+        //init();
         loadMeasurements();
     }, []);
 

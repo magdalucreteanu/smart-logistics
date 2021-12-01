@@ -4,6 +4,7 @@ import {defaultContainer} from '../constants/LayoutStyles';
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
+import {titleText, baseText} from '../constants/LayoutStyles';
 
 export default NewsScreen = ({ navigation }) => {
 
@@ -25,7 +26,7 @@ export default NewsScreen = ({ navigation }) => {
     return (
         //Achtung: style verwendet defaultContainer
       <View style = {defaultContainer()}> 
-          <Text>News</Text>
+          <Text style={baseText()}>News</Text>
       </View>
     );
 };
