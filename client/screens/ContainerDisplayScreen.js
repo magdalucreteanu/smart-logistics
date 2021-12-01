@@ -18,11 +18,18 @@ const ContainerDisplayScreen = ({ navigation }) => {
           headerTintColor: Colors.headerTextColor,
           headerTitle: 'Container Display',
           headerRight: () => (
+            <View style={{flexDirection:'row'}}>
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'home' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Home')}
+            />
             <Button
               type= 'clear'
               icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
               onPress={() => navigation.navigate('Settings')}
             />
+            </View>
           ),
         });
       }, [navigation]);
@@ -70,11 +77,11 @@ const ContainerDisplayScreen = ({ navigation }) => {
                     </TouchableOpacity>
                     <TouchableOpacity style={homeTileContainer()} onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}>
                       <Text style={tileText()}>Environment</Text>
-                      <Ionicons name = 'cloud' size = {80} color = {Colors.stylingColor04} />
+                      <Ionicons name = 'partly-sunny' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
                     <TouchableOpacity style={homeTileContainer()} onPress={() => {navigation.navigate('ContainerMessage')}}>
                       <Text style={tileText()}>Message</Text>
-                      <Ionicons name = 'chatbox' size = {80} color = {Colors.stylingColor04} />
+                      <Ionicons name = 'chatbox-ellipses' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
                 </View>
             }

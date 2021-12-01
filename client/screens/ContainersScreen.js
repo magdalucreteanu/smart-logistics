@@ -17,11 +17,18 @@ export default ContainersScreen = ({ navigation }) => {
           headerTintColor: Colors.headerTextColor,
           headerTitle: 'Containers',
           headerRight: () => (
+            <View style={{flexDirection:'row'}}>
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'home' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Home')}
+            />
             <Button
               type= 'clear'
               icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
               onPress={() => navigation.navigate('Settings')}
             />
+            </View>
           ),
         });
       }, [navigation]);

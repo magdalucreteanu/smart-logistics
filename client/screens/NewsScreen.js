@@ -14,11 +14,18 @@ export default NewsScreen = ({ navigation }) => {
           headerTintColor: Colors.headerTextColor,
           headerTitle: 'News',
           headerRight: () => (
+            <View style={{flexDirection:'row'}}>
+            <Button
+              type= 'clear'
+              icon={<Ionicons name = 'home' size = {32} color = {Colors.headerIconColor} />}
+              onPress={() => navigation.navigate('Home')}
+            />
             <Button
               type= 'clear'
               icon={<Ionicons name = 'settings' size = {32} color = {Colors.headerIconColor} />}
               onPress={() => navigation.navigate('Settings')}
             />
+            </View>
           ),
         });
       }, [navigation]);

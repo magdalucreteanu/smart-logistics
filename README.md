@@ -95,7 +95,6 @@ React native maps: https://github.com/react-native-maps/react-native-maps
 
 Liste 1
 -  Style für alle Seiten einführen
--  Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
 -  Settings wie in NASA App (mit Dark Theme) implementieren
 
 
@@ -130,3 +129,4 @@ Liste 2
 - Login mit useContext(AuthContext) und signIn(username)
 - Speichern der Login-Daten (AsyncStorage), automatisches Login beim nächsten Öffnen der App
 - Logout Funktionalität (wird auf Login Seite navigieren) mit useContext(AuthContext) und signOut()
+- Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
