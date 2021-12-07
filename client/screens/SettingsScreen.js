@@ -3,28 +3,31 @@ import { Text, View, Alert, Switch, Image} from 'react-native';
 import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../components/authContext';
-import {defaultContainer} from '../constants/LayoutStyles';
 import Colors from '../constants/Colors';
 import { Ionicons } from "@expo/vector-icons";
-import {baseText, tileText, titleText} from '../constants/LayoutStyles'
+import {baseText, tileText, titleText} from '../constants/LayoutStyles';
+import { useTheme } from '@react-navigation/native';
 
 const SettingsScreen = ({ navigation }) => {
 
-    const [username, setUsername] = useState('');
-    const [switchValue, setSwitchValue] = useState(false);
+    const { colors, dark } = useTheme();
 
-    const { signOut } = useContext(AuthContext);
+    const [username, setUsername] = useState('');
+    const [isDarkTheme, setIsDarkTheme] = useState(dark);
+
+    const { signOut, toggleTheme } = useContext(AuthContext);
+
 
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
           headerTitle: 'Settings',
         });
       }, [navigation]);
 
-    const toggleSwitch = () => {
-        setSwitchValue(!switchValue)
+    const toggleSwitchHandler = () => {
+        setIsDarkTheme(!isDarkTheme);
+        toggleTheme();
     };
 
     init = async () => {
@@ -34,13 +37,26 @@ const SettingsScreen = ({ navigation }) => {
             let value = await AsyncStorage.getItem('@username');
             setUsername(value);
         } catch (error) {
-            Alert.alert('Error:', error.message);
+            Alert.alert('Error: ', error.message);
         }
-    }
+    };
+
+    const _storeTheme = async () => {
+        try {
+        // Dark Theme an/aus speichern
+          await AsyncStorage.setItem('@darkTheme', JSON.stringify(isDarkTheme));
+        } catch (error) {
+            Alert.alert('Error: ', error.message);
+        }
+    };
     
     useEffect(() => {
         init();
     }, []);
+
+    useEffect(() => {
+        _storeTheme();
+    }, [isDarkTheme]);
 
     const pressHandler = () => {
     // Benutzer fragen, ob Logout wirklich stattfinden soll
@@ -66,21 +82,21 @@ const SettingsScreen = ({ navigation }) => {
       <View style = {{flex: 1, alignItems: 'center', justifyContent: 'center', margin: 20}}> 
         <Image style={{width:300, height:300}} resizeMode='contain' source={require('../assets/LogoWithText.png')} />
         <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={titleText()}>Theme</Text>
+            <Text style={[titleText(), {color: colors.text}]}>Theme</Text>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={[baseText(),{marginEnd: 10}]}>Dark Theme</Text>
+                <Text style={[baseText(),{marginEnd: 10, color: colors.text}]}>Dark Theme</Text>
                 <Switch 
                     trackColor={{ false: 'darkgray', true: Colors.stylingColor05 }}
                     thumbColor={'white'}
-                    onValueChange={toggleSwitch}
-                    value={switchValue}
+                    onValueChange={toggleSwitchHandler}
+                    value={isDarkTheme}
                 />
             </View>
         </View>
         <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
             <Text style={titleText()}>Logout</Text>
-            <Text style={baseText()}>You are currently logged in as {username}.</Text>
-            <Text style={[baseText(),{marginBottom: 20}]}>Do you want to log out?</Text>
+            <Text style={[baseText(), {color: colors.text}]}>You are currently logged in as {username}.</Text>
+            <Text style={[baseText(),{marginBottom: 20, color: colors.text}]}>Do you want to log out?</Text>
             <Button 
                 title="Logout" 
                 titleStyle={[baseText(), {color: 'white'}]}

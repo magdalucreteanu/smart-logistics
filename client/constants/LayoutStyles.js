@@ -3,14 +3,14 @@ import Colors from "./Colors";
 // Textarten
 export const baseText = () => {
     return {
-        color: 'black',
+        //color: 'black',
         fontSize: 20,
     }
 };
 
 export const titleText = () => {
     return {
-        color: 'black',
+        //color: 'black',
         fontSize: 24,
         fontWeight: 'bold'
     }
@@ -32,21 +32,6 @@ export const errorText = () => {
         paddingTop: 20
     }
 };
-
-export const headerText = () => {
-    return {
-        fontSize: 25,
-        color: Colors.stylingColor01,
-    }
-};
-
-// Header
-export const headerTheme = () => {
-    return {
-        backgroundColor: 'white',
-    }
-};
-
 
 export const loginContainer = () => {
     return {
