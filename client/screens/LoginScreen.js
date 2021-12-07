@@ -7,6 +7,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { errorText, loginContainer, titleText, baseText } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 import { AuthContext } from '../components/authContext';
+import { useTheme } from '@react-navigation/native';
 
 export default LoginScreen = ({ navigation }) => {
     const [username, setUsername] = useState('');
@@ -15,6 +16,8 @@ export default LoginScreen = ({ navigation }) => {
 
     // useContext verwenden, um auf signIn zugreifen zu können
     const { signIn } = useContext(AuthContext);
+
+    const { colors } = useTheme();
 
     const usernameInputHandler = enteredText => {
         setUsername(enteredText);
@@ -66,9 +69,9 @@ export default LoginScreen = ({ navigation }) => {
         // der View mit User/Password Felder wird gerendert
         <View style = {loginContainer()}>
             <Image style={{width:300, height:300}} resizeMode='contain' source={require('../assets/LogoWithText.png')} />
-            <Text style={[titleText(), {marginBottom:10}]}>Login</Text>
+            <Text style={[titleText(), {marginBottom:10, color: colors.text}]}>Login</Text>
             <Input 
-                style = {baseText()}
+                style = {[baseText(),{color: colors.text}]}
                 leftIcon= {<Ionicons name = 'person-outline' size = {32} color = {Colors.headerIconColor} />}
                 placeholder = "USER"
                 value = {username}
@@ -77,7 +80,7 @@ export default LoginScreen = ({ navigation }) => {
                 autoCapitalize = 'none'
             />
             <Input
-                style = {baseText()}
+                style = {[baseText(),{color: colors.text}]}
                 leftIcon= {<Ionicons name = 'lock-closed-outline' size = {32} color = {Colors.headerIconColor} />}
                 placeholder = "PASSWORD" 
                 secureTextEntry = {true} 

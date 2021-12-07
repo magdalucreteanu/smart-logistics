@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Alert } from 'react-native';
+import { Alert, StatusBar } from 'react-native';
 import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AppLoading from 'expo-app-loading';
@@ -31,18 +31,13 @@ export default MainNavigator = () => {
         clearAsyncStorage();
     }, []); */
 
+    // Default Theme und Dark Theme definieren
     const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-    // useReducer benutzen: eine Alternative zu useState
-    const initialLoginState = {
-        isLoading: true,
-        userToken: null,
-    };
 
     const CustomDefaultTheme = {
         ...DefaultTheme,
         colors: {
-            primary: DefaultTheme.colors.primary,
+            primary: 'white',
             background: DefaultTheme.colors.background,
             card: '#ffffff',
             text: '#000000',
@@ -54,7 +49,7 @@ export default MainNavigator = () => {
     const CustomDarkTheme = {
         ...DarkTheme,
         colors: {
-            primary: DarkTheme.colors.primary,
+            primary: '#1d1d1d',
             background: DarkTheme.colors.background,
             card: '#000000',
             text: '#ffffff',
@@ -64,6 +59,12 @@ export default MainNavigator = () => {
     }
 
     const theme = isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
+
+    // useReducer benutzen: eine Alternative zu useState
+    const initialLoginState = {
+        isLoading: true,
+        userToken: null,
+    };
 
     const loginReducer = (prevState, action) => {
         switch( action.type){
@@ -165,6 +166,10 @@ export default MainNavigator = () => {
 
     return (
         <AuthContext.Provider value={authContext}>
+            <StatusBar 
+                barStyle = {isDarkTheme ? 'light-content' : 'dark-content'} 
+                backgroundColor = {isDarkTheme ? 'black' : 'white'} 
+            />
             <NavigationContainer theme={theme}>
                 <Stack.Navigator screenOptions={{
                     headerTitleStyle: {color: isDarkTheme ? Colors.stylingColor05 : Colors.stylingColor01, fontSize: 25},

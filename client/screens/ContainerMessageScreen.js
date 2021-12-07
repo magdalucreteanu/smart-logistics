@@ -5,13 +5,15 @@ import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
 import {baseText, titleText} from '../constants/LayoutStyles';
+import { useTheme } from '@react-navigation/native';
 
 const ContainerMessageScreen = ({ navigation }) => {
+  
+  const { colors } = useTheme();
 
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
           headerTitle: 'Message',
           headerRight: () => (
             <View style={{flexDirection:'row'}}>
@@ -33,7 +35,7 @@ const ContainerMessageScreen = ({ navigation }) => {
     return (
         //Achtung: style verwendet defaultContainer
       <View style = {defaultContainer()}> 
-          <Text style={baseText()}>Container Message</Text>
+          <Text style={[baseText(), {color: colors.text}]}>Container Message</Text>
       </View>
     );
 };

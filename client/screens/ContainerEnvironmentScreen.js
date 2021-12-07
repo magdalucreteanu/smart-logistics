@@ -4,13 +4,15 @@ import { ECharts } from "react-native-echarts-wrapper";
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
+import { useTheme } from '@react-navigation/native';
 
 const ContainerEnvironmentScreen = ({ route, navigation }) => {
+
+    const { colors } = useTheme();
 
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
           headerTitle: 'Environment',
           headerRight: () => (
             <View style={{flexDirection:'row'}}>

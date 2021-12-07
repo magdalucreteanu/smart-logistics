@@ -4,8 +4,11 @@ import MapView from 'react-native-maps';
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
+import { useTheme } from '@react-navigation/native';
 
 const ContainerLocationScreen = ({ route, navigation }) => {
+
+    const { colors } = useTheme();
 
     // die Measurements wurden im vorherigen Screen (ContainerDisplayScreen) geladen
     // Sie werden hier auf eine Karte angezeigt
@@ -19,7 +22,6 @@ const ContainerLocationScreen = ({ route, navigation }) => {
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
           headerTitle: 'Location',
           headerRight: () => (
             <View style={{flexDirection:'row'}}>

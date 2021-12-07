@@ -6,15 +6,17 @@ import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
 import { serverAddress } from '../constants/Server';
 import {containersTileContainer, baseText, tileText} from '../constants/LayoutStyles';
+import { useTheme } from '@react-navigation/native';
 
 export default ContainersScreen = ({ navigation }) => {
 
     const [containers, setContainers] = useState([]);
 
+    const { colors } = useTheme();
+
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
           headerTitle: 'Containers',
           headerRight: () => (
             <View style={{flexDirection:'row'}}>
@@ -63,13 +65,13 @@ export default ContainersScreen = ({ navigation }) => {
 
     // Die Container Daten werden hier gerendert
     const renderItem = ({ item }) => (
-        <TouchableOpacity onPress={ () => pressHandler(item.containerNumber) } style={containersTileContainer()}>
+        <TouchableOpacity onPress={ () => pressHandler(item.containerNumber) } style={[containersTileContainer(), {backgroundColor: colors.primary}]}>
             <Text style={tileText()}>{item.containerNumber}</Text>
-            <Text style={baseText()}>Date: {item.startDate}</Text>
-            <Text style={baseText()}>Type: {item.containerType}</Text>
-            <Text style={baseText()}>Start: {item.startLocation}</Text>
-            <Text style={baseText()}>End: {item.endLocation}</Text>
-            <Text style={baseText()}>Contents: {item.contents}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Date: {item.startDate}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Type: {item.containerType}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Start: {item.startLocation}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>End: {item.endLocation}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Contents: {item.contents}</Text>
         </TouchableOpacity>
     );
     
@@ -79,7 +81,7 @@ export default ContainersScreen = ({ navigation }) => {
             <SafeAreaView style = {{flex:1}}>
                 {containers.length===0 ?
                 <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={baseText()}>You have no containers.</Text>
+                    <Text style={[baseText(), {color: colors.text}]}>You have no containers.</Text>
                 </View>
                 :
                 <FlatList

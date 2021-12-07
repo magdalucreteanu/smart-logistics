@@ -5,13 +5,15 @@ import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
 import {titleText, baseText} from '../constants/LayoutStyles';
+import { useTheme } from '@react-navigation/native';
 
 export default NewsScreen = ({ navigation }) => {
+
+  const { colors } = useTheme();
 
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
           headerTitle: 'News',
           headerRight: () => (
             <View style={{flexDirection:'row'}}>
@@ -33,7 +35,7 @@ export default NewsScreen = ({ navigation }) => {
     return (
         //Achtung: style verwendet defaultContainer
       <View style = {defaultContainer()}> 
-          <Text style={baseText()}>News</Text>
+          <Text style={[baseText(), {color: colors.text}]}>News</Text>
       </View>
     );
 };

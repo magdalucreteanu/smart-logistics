@@ -1,5 +1,5 @@
-import React, {useLayoutEffect, useState, useEffect, useContext} from 'react';
-import { Text, View, Alert, Switch, Image} from 'react-native';
+import React, {useState, useEffect, useContext} from 'react';
+import { Text, View, Alert, Switch, Image } from 'react-native';
 import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../components/authContext';
@@ -16,14 +16,6 @@ const SettingsScreen = ({ navigation }) => {
     const [isDarkTheme, setIsDarkTheme] = useState(dark);
 
     const { signOut, toggleTheme } = useContext(AuthContext);
-
-
-    // Navigation Header bearbeiten
-    useLayoutEffect(() => {
-        navigation.setOptions({
-          headerTitle: 'Settings',
-        });
-      }, [navigation]);
 
     const toggleSwitchHandler = () => {
         setIsDarkTheme(!isDarkTheme);
