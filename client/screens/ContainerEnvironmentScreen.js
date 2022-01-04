@@ -105,6 +105,7 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
             show: true,
             // hier wird das Toolbox konfiguriert
             feature: {
+
                 // die ersten Icons
                 magicType: {
                     title: {
@@ -116,6 +117,14 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
                     // in einer Line Chart umgewandelt
                     // oder in einer Bar Chart umgewandelt
                     type: ['line', 'bar']
+                },
+                // Zoom
+                dataZoom: {
+                    yAxisIndex: 'display',
+                    title: {
+                        zoom: 'Zoom',
+                        back: 'Back'
+                    }
                 },
                 // ein Restore icon
                 // bringt das Diagramm in initialem Zustand
@@ -171,12 +180,20 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         toolbox: {
             show: true,
             feature: {
+
                 magicType: {
                     title: {
                         line: 'Switch to Line Chart',
                         bar: 'Switch to Bar Chart'
                     },
                     type: ['line', 'bar']
+                },
+                dataZoom: {
+                    yAxisIndex: 'display',
+                    title: {
+                        zoom: 'Zoom',
+                        back: 'Back'
+                    }
                 },
                 restore: {
                     title: 'Restore'
