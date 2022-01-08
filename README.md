@@ -48,6 +48,7 @@ Bibliotheken:
 -   Moment: npm install moment
 -   Maps: npm install react-native-maps
 -	Async Storage: npm install @react-native-async-storage/async-storage
+-   Scrolling Text: npm install --save @homielab/react-native-auto-scroll
 
 Anwendung starten:
 -   Device in Android starten
@@ -63,6 +64,7 @@ Links:
 -   https://blog.logrocket.com/react-native-maps-introduction/
 -	https://react-native-async-storage.github.io/async-storage/docs/install/
 -	https://react-native-async-storage.github.io/async-storage/docs/usage
+-   https://github.com/homielab/react-native-auto-scroll
 
 ## How To Server
 

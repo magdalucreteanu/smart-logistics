@@ -61,3 +61,17 @@ app.get('/measurements/:containerNumber', (req, res) => {
     // Das geparste JSON Objekt wird zurückgegeben
     return res.send(measurements);
 });
+
+// Liefert die Breaking News (das ist der Scrolling Text in News Screen
+// nimmt eine zufällige Breaking News Nachricht aus einer Liste
+app.get('/breaking', (req, res) => {
+    let message = [
+        "Corona lockdown expected in many european countries",
+        "New US import tax in place next week",
+        "Carbon footprint of the logistic industry at an all time low",
+        "Supply chain issues as Omicron concerns dampen air cargo demand"
+      ];
+    let size = 4;
+    let index = Math.floor(Math.random() * Math.floor(size));
+    return res.send(message[index]);
+});
