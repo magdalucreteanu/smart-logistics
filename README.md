@@ -49,6 +49,9 @@ Bibliotheken:
 -   Maps: npm install react-native-maps
 -	Async Storage: npm install @react-native-async-storage/async-storage
 -   Scrolling Text: npm install --save @homielab/react-native-auto-scroll
+-   RSS Parser: npm install react-native-rss-parser --save
+-   Hyperlinks: npm install --save react-native-hyperlink
+-   React-Native-HTML: npm install --save react-native-render-html
 
 Anwendung starten:
 -   Device in Android starten
@@ -65,6 +68,12 @@ Links:
 -	https://react-native-async-storage.github.io/async-storage/docs/install/
 -	https://react-native-async-storage.github.io/async-storage/docs/usage
 -   https://github.com/homielab/react-native-auto-scroll
+-   https://www.npmjs.com/package/react-native-rss-parser
+-   https://blog.feedspot.com/logistics_rss_feeds/
+-   https://reactnativeforyou.com/how-to-add-hyperlinks-in-react-native/
+-   https://stackoverflow.com/questions/29334984/render-html-in-react-native
+-   https://github.com/jsdf/react-native-htmlview
+-   https://www.npmjs.com/package/react-native-render-html
 
 ## How To Server
 
