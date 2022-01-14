@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../components/authContext';
 import Colors from '../constants/Colors';
 import { Ionicons } from "@expo/vector-icons";
-import {baseText, titleText} from '../constants/LayoutStyles';
+import {baseText, titleText, containerRoundTopCorners} from '../constants/LayoutStyles';
 import { useTheme } from '@react-navigation/native';
 
 const SettingsScreen = ({ navigation }) => {
@@ -71,33 +71,36 @@ const SettingsScreen = ({ navigation }) => {
     }
 
     return (
-      <View style = {{flex: 1, alignItems: 'center', justifyContent: 'center', margin: 20}}> 
-        <Image style={{width:300, height:300}} resizeMode='contain' source={require('../assets/LogoWithText.png')} />
-        <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={[titleText(), {color: colors.text}]}>Theme</Text>
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={[baseText(),{marginEnd: 10, color: colors.text}]}>Dark Theme</Text>
-                <Switch 
-                    trackColor={{ false: 'darkgray', true: Colors.stylingColor05 }}
-                    thumbColor={'white'}
-                    onValueChange={toggleSwitchHandler}
-                    value={isDarkTheme}
+      <View style = {{flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
+        <Image style={{flex: 1,width:300, height:300}} resizeMode='contain' source={require('../assets/LogoWithText.png')} />
+        <View style = {[containerRoundTopCorners(), {flex:1, backgroundColor: colors.primary, width: "100%", padding: 30}]}>
+            <View style={{flex:1, alignItems: 'flex-start', justifyContent: 'center'}}>
+                <Text style={[titleText(), {color: colors.text}]}>Theme</Text>
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+                    <Text style={[baseText(),{marginEnd: 10, color: colors.text}]}>Dark Theme</Text>
+                    <Switch 
+                        trackColor={{ false: 'darkgray', true: Colors.stylingColor05 }}
+                        thumbColor={'white'}
+                        onValueChange={toggleSwitchHandler}
+                        value={isDarkTheme}
+                    />
+                </View>
+            </View>
+            <View style={{flex:2, alignItems: 'flex-start', justifyContent: 'center'}}>
+                <Text style={[titleText(), {color: colors.text}]}>Logout</Text>
+                <Text style={[baseText(), {color: colors.text}]}>You are currently logged in as {username}.</Text>
+                <Text style={[baseText(), {color: colors.text}]}>Do you want to log out?</Text>
+            </View>
+            <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                <Button 
+                    title="Logout" 
+                    titleStyle={[baseText(), {color: 'white'}]}
+                    buttonStyle={{backgroundColor: Colors.stylingColor03}}
+                    onPress={pressHandler}
+                    icon= {<Ionicons name = 'log-out' size = {32} color = {'white'} />}
                 />
             </View>
         </View>
-        <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={titleText()}>Logout</Text>
-            <Text style={[baseText(), {color: colors.text}]}>You are currently logged in as {username}.</Text>
-            <Text style={[baseText(),{marginBottom: 20, color: colors.text}]}>Do you want to log out?</Text>
-            <Button 
-                title="Logout" 
-                titleStyle={[baseText(), {color: 'white'}]}
-                buttonStyle={{backgroundColor: Colors.stylingColor03}}
-                onPress={pressHandler}
-                icon= {<Ionicons name = 'log-out' size = {32} color = {'white'} />}
-            />
-        </View>
-        <View style={{flex:0.5}}></View>
       </View>
     );
 };

@@ -9,16 +9,22 @@ export const baseText = () => {
 
 export const titleText = () => {
     return {
-        fontSize: 24,
+        fontSize: 25,
         fontWeight: 'bold'
     }
 };
 
 export const tileText = () => {
     return {
-        color: Colors.stylingColor03,
         fontSize: 30,
         fontWeight: 'bold'
+    }
+};
+
+export const containerRoundTopCorners = () => {
+    return {
+        borderTopRightRadius: 20, 
+        borderTopLeftRadius: 20
     }
 };
 
@@ -51,7 +57,7 @@ export const homeTileContainer = () => {
         height: 100,
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderRadius: 10,
+        borderRadius: 20,
         shadowColor: 'black',
         shadowOpacity: 0.25,
         shadowOffset: { width: 0, height: 2 },

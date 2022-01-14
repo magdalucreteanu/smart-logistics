@@ -41,6 +41,7 @@ export default MainNavigator = () => {
             text: '#000000',
             border: DefaultTheme.colors.border,
             notification: DefaultTheme.colors.notification,
+            container: "white",
         }
     }
 
@@ -53,6 +54,7 @@ export default MainNavigator = () => {
             text: '#ffffff',
             border: DarkTheme.colors.border,
             notification: DarkTheme.colors.notification,
+            container: "black",
         }
     }
 
@@ -170,7 +172,7 @@ export default MainNavigator = () => {
             />
             <NavigationContainer theme={theme}>
                 <Stack.Navigator screenOptions={{
-                    headerTitleStyle: {color: isDarkTheme ? Colors.stylingColor05 : Colors.stylingColor01, fontSize: 25},
+                    headerTitleStyle: {color: isDarkTheme ? "white" : "black", fontSize: 25},
                     headerTintColor: isDarkTheme ? Colors.stylingColor05 : Colors.stylingColor01
                 }}>
                     { // Je nachdem ob ein User eingeloggt ist oder nicht, zeige den jeweiligen Screen an

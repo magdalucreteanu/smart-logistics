@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 import { Alert, Text, View, TouchableOpacity } from 'react-native';
-import { Button } from "react-native-elements";
-import {homeTileContainer, baseText, titleText, tileText} from '../constants/LayoutStyles';
+import { Button, Divider } from "react-native-elements";
+import {homeTileContainer, titleText, tileText, containerRoundTopCorners} from '../constants/LayoutStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../components/authContext';
 import { Ionicons, Feather } from "@expo/vector-icons";
@@ -74,25 +74,27 @@ export default HomeScreen = ({ navigation }) => {
 
     return (
         <View style = {{flex:1}}>
-            <View style={{flex: 2, alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={[titleText(), {marginTop: 20, color: colors.text}]}>Hello {username}.</Text>
-                <Text style={[titleText(), {color: colors.text}]}>What do you want to do?</Text>
-            </View>
+          <View style = {{flex:2, padding: 30, justifyContent: 'center'}}>
+            <Text style={[titleText(), {color: colors.text}]}>Hello {username}.</Text>
+            <Divider inset={true} insetType="right" color={colors.text} width={1} style={{marginVertical: 10}} />
+            <Text style={[titleText(), {color: colors.text}]}>What do you want to do?</Text>
+          </View>
+          <View style = {[containerRoundTopCorners(), {flex:7, backgroundColor: colors.primary}]}>
             <TouchableOpacity 
               onPress= {() => navigation.navigate('News')} 
-              style = {[homeTileContainer(), {flex:3, backgroundColor: colors.primary}]}
+              style = {[homeTileContainer(), {backgroundColor: colors.container, marginTop: 50}]}
             >
               <Text style={[tileText(),{color: colors.text}]}>News</Text>
               <Ionicons name = 'newspaper' size = {100} color = {Colors.stylingColor04} />
             </TouchableOpacity>
             <TouchableOpacity 
               onPress= {() => navigation.navigate('Containers')} 
-              style = {[homeTileContainer(), {flex:3, backgroundColor: colors.primary}]}
+              style = {[homeTileContainer(), {backgroundColor: colors.container, marginBottom: 50}]}
             >
               <Text style={[tileText(), {color: colors.text}]}>Containers</Text>
               <Feather name = 'box' size = {100} color = {Colors.stylingColor04} />
             </TouchableOpacity>
-            <View style={{flex:1}}></View>
+          </View>
         </View>
     );
 };
