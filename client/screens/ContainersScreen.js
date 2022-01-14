@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
 import { Alert, FlatList, SafeAreaView, Text, View, TouchableOpacity } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, Divider } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
@@ -65,8 +65,9 @@ export default ContainersScreen = ({ navigation }) => {
 
     // Die Container Daten werden hier gerendert
     const renderItem = ({ item }) => (
-        <TouchableOpacity onPress={ () => pressHandler(item.containerNumber) } style={[containersTileContainer(), {backgroundColor: colors.primary}]}>
+        <TouchableOpacity onPress={ () => pressHandler(item.containerNumber) } style={[containersTileContainer(), {backgroundColor: colors.container}]}>
             <Text style={tileText()}>{item.containerNumber}</Text>
+            <Divider inset={true} insetType="right" color={colors.text} width={1} style={{marginVertical: 10}} />
             <Text style={[baseText(), {color: colors.text}]}>Date: {item.startDate}</Text>
             <Text style={[baseText(), {color: colors.text}]}>Type: {item.containerType}</Text>
             <Text style={[baseText(), {color: colors.text}]}>Start: {item.startLocation}</Text>
@@ -77,7 +78,7 @@ export default ContainersScreen = ({ navigation }) => {
     
     return (
         //Achtung: style verwendet defaultContainer
-        <View style = {{flex:1}}>
+        <View style = {{flex:1, backgroundColor: colors.primary}}>
             <SafeAreaView style = {{flex:1}}>
                 {containers.length===0 ?
                 <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>

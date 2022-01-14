@@ -71,7 +71,7 @@ export const containersTileContainer = () => {
         flex: 1,
         margin: 20,
         padding: 15,
-        borderRadius: 10,
+        borderRadius: 20,
         shadowColor: 'black',
         shadowOpacity: 0.25,
         shadowOffset: { width: 0, height: 2 },

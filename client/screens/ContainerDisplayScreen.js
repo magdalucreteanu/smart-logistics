@@ -63,7 +63,7 @@ const ContainerDisplayScreen = ({ navigation }) => {
 
        // die unteren onPress Funktionen geben dem nächsten Screen die
        // geladenen Measurements als Parameters
-       <View style = {{flex:1}}> 
+       <View style = {{flex:1, backgroundColor: colors.primary}}> 
           <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Text style={[titleText(), {marginTop: 10, color: colors.text}]}>Container {containerNumber}</Text>
             </View>
@@ -73,15 +73,15 @@ const ContainerDisplayScreen = ({ navigation }) => {
                 </View>
                 :
                 <View style ={{flex:7}}>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.primary}]} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
+                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
                       <Text style={tileText()}>Location</Text>
                       <Ionicons name = 'location' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.primary}]} onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}>
+                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}>
                       <Text style={tileText()}>Environment</Text>
                       <Ionicons name = 'partly-sunny' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.primary}]} onPress={() => {navigation.navigate('ContainerMessage')}}>
+                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerMessage')}}>
                       <Text style={tileText()}>Message</Text>
                       <Ionicons name = 'chatbox-ellipses' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
