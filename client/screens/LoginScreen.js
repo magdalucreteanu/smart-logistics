@@ -1,10 +1,9 @@
-import React, { useState, useLayoutEffect, useContext } from 'react';
-import { Text, View, Image } from 'react-native';
+import React, { useState, useContext } from 'react';
+import { Text, View, Image, Alert } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import Colors from '../constants/Colors';
 import { Ionicons } from "@expo/vector-icons";
-import { errorText, loginContainer, titleText, baseText } from '../constants/LayoutStyles';
+import { loginContainer, titleText, baseText } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 import { AuthContext } from '../components/authContext';
 import { useTheme } from '@react-navigation/native';
@@ -12,7 +11,6 @@ import { useTheme } from '@react-navigation/native';
 export default LoginScreen = ({ navigation }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
 
     // useContext verwenden, um auf signIn zugreifen zu können
     const { signIn } = useContext(AuthContext);
@@ -31,8 +29,6 @@ export default LoginScreen = ({ navigation }) => {
     // und meldet den User an
     const login = async () => {
         try {
-            // Fehlermeldung entfernen
-            setErrorMessage('');
             // Login API aufrufen
             // username und password werden in einem JSON Obket umgewandelt
             let body = JSON.stringify({
@@ -53,11 +49,11 @@ export default LoginScreen = ({ navigation }) => {
                 signIn(username);
             } else {
                 // Login nicht erfolgreich - Fehlermeldung
-                setErrorMessage('Could not login: invalid user name or password.');
+                Alert.alert('Error', 'Could not login: invalid user name or password.');
             }
         } catch (error) {
             // Login nicht erfolgreich - Fehlermeldung
-            setErrorMessage('Could not login: invalid user name or password.');
+            Alert.alert('Error', 'Could not login: invalid user name or password.');
         }
     };
 
@@ -96,7 +92,6 @@ export default LoginScreen = ({ navigation }) => {
                 onPress={pressHandler}
                 icon= {<Ionicons name = 'log-in' size = {32} color = {'white'} />}
             />
-            <Text style = {errorText()}>{errorMessage}</Text>
         </View>
   );
 };

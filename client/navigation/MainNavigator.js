@@ -13,10 +13,8 @@ import ContainerLocationScreen from '../screens/ContainerLocationScreen';
 import ContainerEnvironmentScreen from '../screens/ContainerEnvironmentScreen';
 import ContainerMessageScreen from '../screens/ContainerMessageScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import {headerTheme, headerText} from '../constants/LayoutStyles';
 import { AuthContext } from '../components/authContext';
 import Colors from '../constants/Colors';
-import { color } from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 
@@ -37,7 +35,7 @@ export default MainNavigator = () => {
     const CustomDefaultTheme = {
         ...DefaultTheme,
         colors: {
-            primary: 'white',
+            primary: Colors.stylingColor05,
             background: DefaultTheme.colors.background,
             card: '#ffffff',
             text: '#000000',
@@ -49,7 +47,7 @@ export default MainNavigator = () => {
     const CustomDarkTheme = {
         ...DarkTheme,
         colors: {
-            primary: '#1d1d1d',
+            primary: Colors.stylingColor01,
             background: DarkTheme.colors.background,
             card: '#000000',
             text: '#ffffff',

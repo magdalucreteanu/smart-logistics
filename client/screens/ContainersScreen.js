@@ -47,7 +47,7 @@ export default ContainersScreen = ({ navigation }) => {
             // die Liste der Containers setzen
             setContainers(json);
         } catch (error) {
-            Alert.alert('Error:', error.message);
+            Alert.alert('Error', error.message);
         }
     }
 

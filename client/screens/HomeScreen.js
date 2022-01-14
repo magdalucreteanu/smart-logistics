@@ -54,7 +54,6 @@ export default HomeScreen = ({ navigation }) => {
     // Navigation Header bearbeiten
     useLayoutEffect(() => {
         navigation.setOptions({
-          headerTintColor: Colors.headerTextColor,
           headerTitle: 'Home',
           headerRight: () => (
             <Button

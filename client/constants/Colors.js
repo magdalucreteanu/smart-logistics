@@ -1,7 +1,6 @@
 export default {
     // Header Farben
     headerIconColor: '#012A4A',
-    headerTextColor: 'black',
 
     // Styling Farben, momentan verschiedene Blautöne
     stylingColor01: '#02111C',      // dunklest Blau (Schiffsrumpf)

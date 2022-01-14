@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../components/authContext';
 import Colors from '../constants/Colors';
 import { Ionicons } from "@expo/vector-icons";
-import {baseText, tileText, titleText} from '../constants/LayoutStyles';
+import {baseText, titleText} from '../constants/LayoutStyles';
 import { useTheme } from '@react-navigation/native';
 
 const SettingsScreen = ({ navigation }) => {
@@ -29,7 +29,7 @@ const SettingsScreen = ({ navigation }) => {
             let value = await AsyncStorage.getItem('@username');
             setUsername(value);
         } catch (error) {
-            Alert.alert('Error: ', error.message);
+            Alert.alert('Error', error.message);
         }
     };
 
@@ -38,7 +38,7 @@ const SettingsScreen = ({ navigation }) => {
         // Dark Theme an/aus speichern
           await AsyncStorage.setItem('@darkTheme', JSON.stringify(isDarkTheme));
         } catch (error) {
-            Alert.alert('Error: ', error.message);
+            Alert.alert('Error', error.message);
         }
     };
     

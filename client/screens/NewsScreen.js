@@ -53,7 +53,7 @@ export default NewsScreen = ({ navigation }) => {
         // Text als Breaking News setzen
         setBreaking(message);
     } catch (error) {
-        Alert.alert('Error:', error.message);
+        Alert.alert('Error', error.message);
     }
   }
 
@@ -68,7 +68,7 @@ export default NewsScreen = ({ navigation }) => {
       // wir brauchen nur die neuesten 3 Nachrichten
       setFeeds(rss.items.slice(0, 3));
     } catch (error) {
-      Alert.alert('Error:', error.message);
+      Alert.alert('Error', error.message);
     }
   }
   
