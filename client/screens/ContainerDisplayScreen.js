@@ -76,15 +76,15 @@ const ContainerDisplayScreen = ({ navigation }) => {
                 :
                 <View style={[containerRoundTopCorners(),{flex: 10, backgroundColor: colors.primary}]}>
                     <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container, marginTop: 50}]} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
-                      <Text style={tileText()}>Location</Text>
+                      <Text style={[tileText(), {color: colors.text}]}>Location</Text>
                       <Ionicons name = 'location' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
                     <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}>
-                      <Text style={tileText()}>Environment</Text>
+                      <Text style={[tileText(), {color: colors.text}]}>Environment</Text>
                       <Ionicons name = 'partly-sunny' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
                     <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container, marginBottom: 50}]} onPress={() => {navigation.navigate('ContainerMessage')}}>
-                      <Text style={tileText()}>Message</Text>
+                      <Text style={[tileText(), {color: colors.text}]}>Message</Text>
                       <Ionicons name = 'chatbox-ellipses' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
                 </View>

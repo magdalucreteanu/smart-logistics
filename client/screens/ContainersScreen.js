@@ -66,7 +66,7 @@ export default ContainersScreen = ({ navigation }) => {
     // Die Container Daten werden hier gerendert
     const renderItem = ({ item }) => (
         <TouchableOpacity onPress={ () => pressHandler(item.containerNumber) } style={[containersTileContainer(), {backgroundColor: colors.container}]}>
-            <Text style={tileText()}>{item.containerNumber}</Text>
+            <Text style={[tileText(),  {color: colors.text}]}>{item.containerNumber}</Text>
             <Divider inset={true} insetType="right" color={colors.text} width={1} style={{marginVertical: 10}} />
             <Text style={[baseText(), {color: colors.text}]}>Date:             {item.startDate}</Text>
             <Text style={[baseText(), {color: colors.text}]}>Type:             {item.containerType}</Text>
