@@ -66,6 +66,20 @@ export const homeTileContainer = () => {
     }
 };
 
+
+export const settingsTileContainer = () => {
+    return {
+        flex: 1,
+        borderRadius: 20, 
+        padding: 15,
+        shadowColor: 'black',
+        shadowOpacity: 0.25,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 10,
+        elevation: 8,
+    }
+};
+
 export const containersTileContainer = () => {
     return {
         flex: 1,
@@ -84,13 +98,14 @@ export const containersDisplayContainer = () => {
     return {
         flex: 1,
         flexDirection: 'row',
-        margin: 30,
-        paddingVertical: 15,
+        marginHorizontal: 30,
+        marginVertical: 20,
+        paddingVertical: 10,
         paddingHorizontal: 20,
-        height: 100,
+        minHeight: 100,
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderRadius: 10,
+        borderRadius: 20,
         shadowColor: 'black',
         shadowOpacity: 0.25,
         shadowOffset: { width: 0, height: 2 },

@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
-import { titleText, tileText, baseText, containersDisplayContainer } from '../constants/LayoutStyles';
+import { titleText, tileText, baseText, containersDisplayContainer, containerRoundTopCorners } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 import { useTheme } from '@react-navigation/native';
 
@@ -63,17 +63,19 @@ const ContainerDisplayScreen = ({ navigation }) => {
 
        // die unteren onPress Funktionen geben dem nächsten Screen die
        // geladenen Measurements als Parameters
-       <View style = {{flex:1, backgroundColor: colors.primary}}> 
-          <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={[titleText(), {marginTop: 10, color: colors.text}]}>Container {containerNumber}</Text>
-            </View>
+       <View style = {{flex:1}}> 
+          <View style={{flex: 1, padding: 30, justifyContent: 'center'}}>
+            <Text style={[titleText(), {color: colors.text}]}>Container {containerNumber}</Text>
+          </View>
             {measurements.length===0 ?
-                <View style={{flex: 7, alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={[baseText(), {color: colors.text}]}>This container does not have any measurements.</Text>
+                <View style={[containerRoundTopCorners(),{flex: 10, alignItems: 'center', justifyContent: 'flex-start', backgroundColor: colors.primary}]}>
+                  <View style={[containersDisplayContainer(),{maxHeight: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.container}]}>
+                    <Text style={[baseText(), {color: colors.text}]}>This container does not have any measurements.</Text>
+                  </View>
                 </View>
                 :
-                <View style ={{flex:7}}>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
+                <View style={[containerRoundTopCorners(),{flex: 10, backgroundColor: colors.primary}]}>
+                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container, marginTop: 50}]} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
                       <Text style={tileText()}>Location</Text>
                       <Ionicons name = 'location' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
@@ -81,7 +83,7 @@ const ContainerDisplayScreen = ({ navigation }) => {
                       <Text style={tileText()}>Environment</Text>
                       <Ionicons name = 'partly-sunny' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerMessage')}}>
+                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container, marginBottom: 50}]} onPress={() => {navigation.navigate('ContainerMessage')}}>
                       <Text style={tileText()}>Message</Text>
                       <Ionicons name = 'chatbox-ellipses' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>

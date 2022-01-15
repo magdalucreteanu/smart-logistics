@@ -68,11 +68,11 @@ export default ContainersScreen = ({ navigation }) => {
         <TouchableOpacity onPress={ () => pressHandler(item.containerNumber) } style={[containersTileContainer(), {backgroundColor: colors.container}]}>
             <Text style={tileText()}>{item.containerNumber}</Text>
             <Divider inset={true} insetType="right" color={colors.text} width={1} style={{marginVertical: 10}} />
-            <Text style={[baseText(), {color: colors.text}]}>Date: {item.startDate}</Text>
-            <Text style={[baseText(), {color: colors.text}]}>Type: {item.containerType}</Text>
-            <Text style={[baseText(), {color: colors.text}]}>Start: {item.startLocation}</Text>
-            <Text style={[baseText(), {color: colors.text}]}>End: {item.endLocation}</Text>
-            <Text style={[baseText(), {color: colors.text}]}>Contents: {item.contents}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Date:             {item.startDate}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Type:             {item.containerType}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Start:             {item.startLocation}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>End:               {item.endLocation}</Text>
+            <Text style={[baseText(), {color: colors.text}]}>Contents:      {item.contents}</Text>
         </TouchableOpacity>
     );
     
@@ -81,7 +81,7 @@ export default ContainersScreen = ({ navigation }) => {
         <View style = {{flex:1, backgroundColor: colors.primary}}>
             <SafeAreaView style = {{flex:1}}>
                 {containers.length===0 ?
-                <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <View style={[containersTileContainer(),{flex: 1, maxHeight:100, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.container }]}>
                     <Text style={[baseText(), {color: colors.text}]}>You have no containers.</Text>
                 </View>
                 :
