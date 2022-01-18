@@ -1,5 +1,5 @@
 import React, {useLayoutEffect} from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { ECharts } from "react-native-echarts-wrapper";
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
@@ -41,7 +41,12 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         title: {
             text: 'Temperature',
             //subtext: 'subtext here',
-            left: 'center'
+            left: 'center',
+            // Überschrift Farbe
+            textStyle: {color: colors.text},
+        },
+        textStyle: {
+            color: colors.text
         },
         // die Definition für die x Achse
         xAxis: {
@@ -68,6 +73,7 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         // hier wird die Anzeige der Messungen konfiguriert
         series: [
             {
+                color: [Colors.stylingColor05],
                 // die Temperaturen als Zahlen werden in diesem Array geladen
                 data: [],
                 // unser Diagramm ist eine Linie
@@ -103,6 +109,10 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         toolbox: {
             // das Toolbox wird standardmäßig angezeigt
             show: true,
+            // Icons Farbe
+            iconStyle: { 
+                borderColor: colors.text
+            },
             // hier wird das Toolbox konfiguriert
             feature: {
 
@@ -141,7 +151,11 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         title: {
             text: 'Humidity',
             //subtext: 'subtext here',
-            left: 'center'
+            left: 'center',
+            textStyle: {color: colors.text},
+        },
+        textStyle: {
+            color: colors.text
         },
         xAxis: {
             type: "category",
@@ -158,6 +172,7 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         },
         series: [
             {
+                color: [Colors.stylingColor05],
                 data: [],
                 type: "line",
                 markPoint: {
@@ -179,6 +194,10 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         },
         toolbox: {
             show: true,
+            // Icons Farbe
+            iconStyle: { 
+                borderColor: colors.text
+            },
             feature: {
 
                 magicType: {
@@ -226,24 +245,18 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
         // Mit option={optionTemperature} oder option={optionHumidity}
         // werden die Diagramme mit den oben definierten
         // Konfigurationen initialisiert.
-        <View style={styles.chartContainer}>
+        <View style={{flex: 1, color: colors.background }}>
             <ECharts
             option={optionTemperature}
-            backgroundColor="rgba(0, 0, 0, 0.1)"
+            backgroundColor={colors.background}
             />
             <ECharts
             option={optionHumidity}
-            backgroundColor="rgba(0, 0, 0, 0.1)"
+            backgroundColor={colors.background}
             />
         </View>
     );
  
 };
-
-const styles = StyleSheet.create({
-    chartContainer: {
-      flex: 1
-    }
-});
 
 export default ContainerEnvironmentScreen;

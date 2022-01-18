@@ -42,6 +42,7 @@ export default MainNavigator = () => {
             border: DefaultTheme.colors.border,
             notification: DefaultTheme.colors.notification,
             container: "white",
+            accent: Colors.stylingColor01,
         }
     }
 
@@ -55,6 +56,7 @@ export default MainNavigator = () => {
             border: DarkTheme.colors.border,
             notification: DarkTheme.colors.notification,
             container: "black",
+            accent: Colors.stylingColor05,
         }
     }
 

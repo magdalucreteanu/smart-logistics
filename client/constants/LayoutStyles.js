@@ -114,6 +114,20 @@ export const containersDisplayTileContainer = () => {
     }
 };
 
+export const newsTileContainer = () => {
+    return {
+        flex: 1,
+        marginBottom: 20,
+        padding: 15,
+        borderRadius: 20,
+        shadowColor: 'black',
+        shadowOpacity: 0.25,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 10,
+        elevation: 8,
+    }
+};
+
 export const autoScrollContainer = () => {
     return {
         flex: 1,

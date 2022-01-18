@@ -1,17 +1,16 @@
 import React, {useEffect, useState, useLayoutEffect} from 'react';
-import { Alert, Text, View, StyleSheet, SafeAreaView, FlatList,ActivityIndicator, Image } from 'react-native';
+import { Alert, Text, View, SafeAreaView, FlatList,ActivityIndicator, Image } from 'react-native';
 import { useWindowDimensions } from 'react-native';
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
-import {titleText, baseText, autoScrollContainer, containerRoundTopCorners} from '../constants/LayoutStyles';
+import {titleText, baseText, autoScrollContainer, containerRoundTopCorners, newsTileContainer} from '../constants/LayoutStyles';
 import { useTheme } from '@react-navigation/native';
 import AutoScroll from '@homielab/react-native-auto-scroll';
 import { serverAddress } from '../constants/Server';
 import * as rssParser from 'react-native-rss-parser';
 import Hyperlink from 'react-native-hyperlink';
 import RenderHtml from 'react-native-render-html';
-import { color } from 'react-native-elements/dist/helpers';
 
 export default NewsScreen = ({ navigation }) => {
 
@@ -95,11 +94,12 @@ export default NewsScreen = ({ navigation }) => {
                 keyExtractor={item => item.id}
                 numColumns={1}
                 renderItem={({item}) =>
-                  <View>
+                  <View style={[newsTileContainer(), {backgroundColor: colors.container}]}> 
                     <Text style={[baseText(), {color: colors.text}]}>{item.title}</Text>
                     <RenderHtml
                       contentWidth={width}
                       source={{html: item.content}}
+                      baseStyle={{color:colors.text, fontSize:20 }}
                     />
                     <Hyperlink linkDefault={ true } linkStyle={ { color: '#2980b9', fontSize: 20 } }
                       linkText={ url => url.includes('http') ? '[Read more]' : url }>
@@ -115,19 +115,3 @@ export default NewsScreen = ({ navigation }) => {
     
   );
 };
-
-const styles = StyleSheet.create({
-  welcome: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    margin: 10,
-  },
-  image: {
-    width: "100%",
-    height: 300,
-    justifyContent: 'center',
-    flex: 1
-  },
-});
