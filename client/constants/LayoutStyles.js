@@ -94,7 +94,7 @@ export const containersTileContainer = () => {
     }
 };
 
-export const containersDisplayContainer = () => {
+export const containersDisplayTileContainer = () => {
     return {
         flex: 1,
         flexDirection: 'row',
@@ -105,6 +105,20 @@ export const containersDisplayContainer = () => {
         minHeight: 100,
         alignItems: 'center',
         justifyContent: 'space-between',
+        borderRadius: 20,
+        shadowColor: 'black',
+        shadowOpacity: 0.25,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 10,
+        elevation: 8,
+    }
+};
+
+export const autoScrollContainer = () => {
+    return {
+        flex: 1,
+        padding: 10,
+        marginBottom: 10,
         borderRadius: 20,
         shadowColor: 'black',
         shadowOpacity: 0.25,

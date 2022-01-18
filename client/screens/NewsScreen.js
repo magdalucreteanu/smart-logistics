@@ -1,17 +1,17 @@
 import React, {useEffect, useState, useLayoutEffect} from 'react';
-import { Alert, Text, View, StyleSheet, SafeAreaView, FlatList, Image } from 'react-native';
+import { Alert, Text, View, StyleSheet, SafeAreaView, FlatList,ActivityIndicator, Image } from 'react-native';
 import { useWindowDimensions } from 'react-native';
-import {defaultContainer} from '../constants/LayoutStyles';
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
-import {titleText, baseText} from '../constants/LayoutStyles';
+import {titleText, baseText, autoScrollContainer, containerRoundTopCorners} from '../constants/LayoutStyles';
 import { useTheme } from '@react-navigation/native';
 import AutoScroll from '@homielab/react-native-auto-scroll';
 import { serverAddress } from '../constants/Server';
 import * as rssParser from 'react-native-rss-parser';
 import Hyperlink from 'react-native-hyperlink';
 import RenderHtml from 'react-native-render-html';
+import { color } from 'react-native-elements/dist/helpers';
 
 export default NewsScreen = ({ navigation }) => {
 
@@ -78,15 +78,17 @@ export default NewsScreen = ({ navigation }) => {
   }, []);
 
   return (
-    //Achtung: style verwendet defaultContainer
-    <View style = {defaultContainer()}> 
-        <AutoScroll style={styles.scrolling}>
-          <Text style={styles.welcome}>--- Breaking: {breaking} ---</Text>
+    <View style = {{flex: 1, alignItems: 'center',justifyContent: 'center', padding: 20, backgroundColor: colors.background}}> 
+        <AutoScroll style={[autoScrollContainer(), {backgroundColor: colors.primary }]}>
+          <Text style={[baseText(),{color: colors.text, margin:10, textAlign: "center", fontWeight: "bold"}]}>--- Breaking: {breaking} ---</Text>
         </AutoScroll>
         <View style={{ flex: 10 }}>
           <SafeAreaView>
             {feeds.length===0 ?
-              <Text style={[baseText(), {color: colors.text}]}>News feeds are loading.</Text>
+              <View style={{flex:1}}>
+                <Text style={[baseText(), {color: colors.text}]}>News feeds are loading.</Text>
+                <ActivityIndicator size="large" color={colors.primary} />
+              </View>
               :
               <FlatList
                 data={feeds}
@@ -101,7 +103,7 @@ export default NewsScreen = ({ navigation }) => {
                     />
                     <Hyperlink linkDefault={ true } linkStyle={ { color: '#2980b9', fontSize: 20 } }
                       linkText={ url => url.includes('http') ? '[Read more]' : url }>
-                        <Text>{item.id}</Text>
+                        <Text style={[baseText(),{color:colors.text}]}>{item.id}</Text>
                     </Hyperlink>
                   </View>
                 } 
@@ -115,12 +117,6 @@ export default NewsScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  scrolling: {
-    backgroundColor: "red",
-    width: 400,
-    padding: 10,
-    marginBottom: 10,
-  },
   welcome: {
     color: "white",
     fontSize: 20,

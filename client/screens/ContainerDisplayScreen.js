@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from "@expo/vector-icons";
 import Colors from '../constants/Colors';
-import { titleText, tileText, baseText, containersDisplayContainer, containerRoundTopCorners } from '../constants/LayoutStyles';
+import { titleText, tileText, baseText, containersDisplayTileContainer, containerRoundTopCorners } from '../constants/LayoutStyles';
 import { serverAddress } from '../constants/Server';
 import { useTheme } from '@react-navigation/native';
 
@@ -69,21 +69,21 @@ const ContainerDisplayScreen = ({ navigation }) => {
           </View>
             {measurements.length===0 ?
                 <View style={[containerRoundTopCorners(),{flex: 10, alignItems: 'center', justifyContent: 'flex-start', backgroundColor: colors.primary}]}>
-                  <View style={[containersDisplayContainer(),{maxHeight: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.container}]}>
+                  <View style={[containersDisplayTileContainer(),{maxHeight: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.container}]}>
                     <Text style={[baseText(), {color: colors.text}]}>This container does not have any measurements.</Text>
                   </View>
                 </View>
                 :
                 <View style={[containerRoundTopCorners(),{flex: 10, backgroundColor: colors.primary}]}>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container, marginTop: 50}]} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
+                    <TouchableOpacity style={[containersDisplayTileContainer(), {backgroundColor: colors.container, marginTop: 50}]} onPress={() => {navigation.navigate('ContainerLocation', { measurements: measurements })}}>
                       <Text style={[tileText(), {color: colors.text}]}>Location</Text>
                       <Ionicons name = 'location' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}>
+                    <TouchableOpacity style={[containersDisplayTileContainer(), {backgroundColor: colors.container}]} onPress={() => {navigation.navigate('ContainerEnvironment', { measurements: measurements })}}>
                       <Text style={[tileText(), {color: colors.text}]}>Environment</Text>
                       <Ionicons name = 'partly-sunny' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[containersDisplayContainer(), {backgroundColor: colors.container, marginBottom: 50}]} onPress={() => {navigation.navigate('ContainerMessage')}}>
+                    <TouchableOpacity style={[containersDisplayTileContainer(), {backgroundColor: colors.container, marginBottom: 50}]} onPress={() => {navigation.navigate('ContainerMessage')}}>
                       <Text style={[tileText(), {color: colors.text}]}>Message</Text>
                       <Ionicons name = 'chatbox-ellipses' size = {80} color = {Colors.stylingColor04} />
                     </TouchableOpacity>
