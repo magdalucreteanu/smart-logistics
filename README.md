@@ -52,6 +52,7 @@ Bibliotheken:
 -   RSS Parser: npm install react-native-rss-parser --save
 -   Hyperlinks: npm install --save react-native-hyperlink
 -   React-Native-HTML: npm install --save react-native-render-html
+-	Chat: npm install react-native-gifted-chat --save
 
 Anwendung starten:
 -   Device in Android starten
@@ -74,6 +75,7 @@ Links:
 -   https://stackoverflow.com/questions/29334984/render-html-in-react-native
 -   https://github.com/jsdf/react-native-htmlview
 -   https://www.npmjs.com/package/react-native-render-html
+-	https://github.com/FaridSafi/react-native-gifted-chat
 
 ## How To Server
 
@@ -105,10 +107,8 @@ React native maps: https://github.com/react-native-maps/react-native-maps
 ## Offene Punkte (Liste nicht vollständig)
 
 Liste 1
-- Styling des Dark Themes überarbeiten
 - News Screen mit Funktionalität bzw. Informationen füllen
 - Landscape Modus einführen
-
 
 Liste 2
 -   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
@@ -144,3 +144,5 @@ Liste 2
 - Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
 -  Style für alle Seiten einführen
 -  Settings wie in NASA App (mit Dark Theme) implementieren
+-  Styling des Dark Themes überarbeiten
+-  Message Screen gefüllt (nur halbe Funktionalität, ohne Speichern der Nachrichten)
