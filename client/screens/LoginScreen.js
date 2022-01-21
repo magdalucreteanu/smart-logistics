@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Text, View, Image, Alert } from 'react-native';
+import { Text, View, Image, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { Button, Input } from 'react-native-elements';
 import Colors from '../constants/Colors';
 import { Ionicons } from "@expo/vector-icons";
@@ -63,35 +63,37 @@ export default LoginScreen = ({ navigation }) => {
 
     return (
         // der View mit User/Password Felder wird gerendert
-        <View style = {loginContainer()}>
-            <Image style={{width:300, height:300}} resizeMode='contain' source={require('../assets/LogoWithText.png')} />
-            <Text style={[titleText(), {marginBottom:10, color: colors.text}]}>Login</Text>
-            <Input 
-                style = {[baseText(),{color: colors.text}]}
-                leftIcon= {<Ionicons name = 'person-outline' size = {32} color = {Colors.headerIconColor} />}
-                placeholder = "USER"
-                value = {username}
-                onChangeText = {usernameInputHandler}
-                clearTextOnFocus = {true}
-                autoCapitalize = 'none'
-            />
-            <Input
-                style = {[baseText(),{color: colors.text}]}
-                leftIcon= {<Ionicons name = 'lock-closed-outline' size = {32} color = {Colors.headerIconColor} />}
-                placeholder = "PASSWORD" 
-                secureTextEntry = {true} 
-                value = {password}
-                onChangeText = {passwordInputHandler}
-                clearTextOnFocus = {true}
-                autoCapitalize = 'none'
-            />
-            <Button 
-                title="Login" 
-                titleStyle={[baseText(), {color: 'white'}]}
-                buttonStyle={{backgroundColor: Colors.stylingColor03}}
-                onPress={pressHandler}
-                icon= {<Ionicons name = 'log-in' size = {32} color = {'white'} />}
-            />
-        </View>
+        <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
+            <View style = {loginContainer()}>
+                <Image style={{width:300, height:300}} resizeMode='contain' source={require('../assets/LogoWithText.png')} />
+                <Text style={[titleText(), {marginBottom:10, color: colors.text}]}>Login</Text>
+                <Input 
+                    style = {[baseText(),{color: colors.text}]}
+                    leftIcon= {<Ionicons name = 'person-outline' size = {32} color = {Colors.headerIconColor} />}
+                    placeholder = "USER"
+                    value = {username}
+                    onChangeText = {usernameInputHandler}
+                    clearTextOnFocus = {true}
+                    autoCapitalize = 'none'
+                />
+                <Input
+                    style = {[baseText(),{color: colors.text}]}
+                    leftIcon= {<Ionicons name = 'lock-closed-outline' size = {32} color = {Colors.headerIconColor} />}
+                    placeholder = "PASSWORD" 
+                    secureTextEntry = {true} 
+                    value = {password}
+                    onChangeText = {passwordInputHandler}
+                    clearTextOnFocus = {true}
+                    autoCapitalize = 'none'
+                />
+                <Button 
+                    title="Login" 
+                    titleStyle={[baseText(), {color: 'white'}]}
+                    buttonStyle={{backgroundColor: Colors.stylingColor03}}
+                    onPress={pressHandler}
+                    icon= {<Ionicons name = 'log-in' size = {32} color = {'white'} />}
+                />
+            </View>
+        </TouchableWithoutFeedback>
   );
 };

@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useState, useEffect, useCallback} from 'react';
-import { Text, View, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
 import {defaultContainer} from '../constants/LayoutStyles';
 import { Button } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
@@ -7,11 +7,15 @@ import Colors from '../constants/Colors';
 import {baseText, titleText} from '../constants/LayoutStyles';
 import { useTheme } from '@react-navigation/native';
 import { Bubble, GiftedChat, Send, InputToolbar } from 'react-native-gifted-chat';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const ContainerMessageScreen = ({ navigation }) => {
+const ContainerMessageScreen = ({ route, navigation }) => {
   
   const [messages, setMessages] = useState([]);
+  const [username, setUsername] = useState('');
   const { colors } = useTheme();
+
+  const { containerNumber } = route.params;
 
   // Navigation Header bearbeiten
   useLayoutEffect(() => {
@@ -34,25 +38,66 @@ const ContainerMessageScreen = ({ navigation }) => {
       });
   }, [navigation]);
 
+  init = async () => {
+    let savedMessages;
+      try {
+          // Username aus Storage lesen
+          let value = await AsyncStorage.getItem('@username');
+          setUsername(value);
+          let savedMessagesValue = await AsyncStorage.getItem('@messages');
+          savedMessages = JSON.parse(savedMessagesValue); 
+          // TODO: Individuelles speichern einer Nachricht für den jeweiligen Benutzer und vielleicht Container
+          // vielleicht mit: console.log('@messages/' + username + '/' + containerNumber);
+      } catch (error) {
+          Alert.alert('Error', error.message);
+      }
+      // Wenn keine gespeicherte Nachrichten vorhanden
+      if (savedMessages == null) {
+        console.log('No stored messages');
+        setMessages([
+          {
+            _id: 1,
+            text: '[System Message] \nIf there are any problems with your containers, you can message the staff here. Please describe the problem in detail, we will take care of it as soon as possible.',
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'React Native',
+              avatar: 'https://placeimg.com/140/140/any',
+            },
+          },
+        ])
+      // Wenn gespeicherte Nachrichten vorhanden
+      } else {
+        //console.log('There are stored messages');
+        setMessages(savedMessages);
+      }
+  };
+
+  const _storeMessages = async () => {
+      try {
+      // Messages speichern
+        await AsyncStorage.setItem('@messages', JSON.stringify(messages));
+        //console.log('Stored Message');
+      } catch (error) {
+          Alert.alert('Error', error.message);
+      }
+  };
+  
   useEffect(() => {
-    setMessages([
-      {
-        _id: 1,
-        text: '[System Message] \nIf there are any problems with your containers, you can message the staff here. Please describe the problem in detail, we will take care of it as soon as possible.',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-    ])
-  }, [])
+      init();
+  }, []);
+
+  useEffect(() => {
+    if(messages.length > 0) {
+      _storeMessages();
+    }
+  }, [messages]);
 
   const onSend = useCallback((messages = []) => {
     setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
   }, [])
 
+  // Text-"Bubble" anpassen
   const renderBubble = (props) => {
     return(
     <Bubble 
@@ -77,6 +122,7 @@ const ContainerMessageScreen = ({ navigation }) => {
     );
   }
 
+  // Sende-Button anpassen
   const renderSend = (props) => {
     return(
       <Send {... props}>
@@ -87,6 +133,7 @@ const ContainerMessageScreen = ({ navigation }) => {
     );
   }
 
+  // Toolbar anpassen (zum Nachrichten eingeben)
   const renderInputToolbar = (props) => {
     return (
       <InputToolbar
@@ -114,7 +161,7 @@ const ContainerMessageScreen = ({ navigation }) => {
             renderSend = {renderSend}
             scrollToBottom 
             renderInputToolbar = {renderInputToolbar}
-            textInputStyle={{color: colors.text}}
+            textInputStyle = {{color: colors.text}}
           />
         </View>
       </TouchableWithoutFeedback>
