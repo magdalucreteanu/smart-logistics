@@ -114,6 +114,7 @@ Liste 2
 -   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
 -	Funktionalität der Filterfelder (z.B. Datum von und bis) auf dem Shipment Screen implementieren
 -	Nachricht Funktionalität implementieren
+-	Nachrichten vom Benutzer anhängig speichern
 
 ## Done
 - Leeres Projekt in Github erstellt
@@ -145,4 +146,4 @@ Liste 2
 -  Style für alle Seiten einführen
 -  Settings wie in NASA App (mit Dark Theme) implementieren
 -  Styling des Dark Themes überarbeiten
--  Message Screen gefüllt (nur halbe Funktionalität, ohne Speichern der Nachrichten)
+-  Message Screen gefüllt (nur halbe Funktionalität, lokales Speichern der Nachrichten, bisher unabhängig vom Benutzer)
