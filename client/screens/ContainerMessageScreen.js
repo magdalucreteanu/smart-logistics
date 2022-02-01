@@ -44,10 +44,9 @@ const ContainerMessageScreen = ({ route, navigation }) => {
           // Username aus Storage lesen
           let value = await AsyncStorage.getItem('@username');
           setUsername(value);
-          let savedMessagesValue = await AsyncStorage.getItem('@messages');
+          // Individuelles speichern einer Nachricht für den jeweiligen Benutzer und Container
+          let savedMessagesValue = await AsyncStorage.getItem('@messages/' + value + '/' + containerNumber);
           savedMessages = JSON.parse(savedMessagesValue); 
-          // TODO: Individuelles speichern einer Nachricht für den jeweiligen Benutzer und vielleicht Container
-          // vielleicht mit: console.log('@messages/' + username + '/' + containerNumber);
       } catch (error) {
           Alert.alert('Error', error.message);
       }
@@ -68,7 +67,6 @@ const ContainerMessageScreen = ({ route, navigation }) => {
         ])
       // Wenn gespeicherte Nachrichten vorhanden
       } else {
-        //console.log('There are stored messages');
         setMessages(savedMessages);
       }
   };
@@ -76,8 +74,7 @@ const ContainerMessageScreen = ({ route, navigation }) => {
   const _storeMessages = async () => {
       try {
       // Messages speichern
-        await AsyncStorage.setItem('@messages', JSON.stringify(messages));
-        //console.log('Stored Message');
+        await AsyncStorage.setItem('@messages/' + username + '/' + containerNumber, JSON.stringify(messages));
       } catch (error) {
           Alert.alert('Error', error.message);
       }
