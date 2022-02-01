@@ -296,7 +296,7 @@ const ContainerLocationScreen = ({ route, navigation }) => {
                 ))}
                 {<MapView.Polyline
                     coordinates={this.state.polyline}
-                    strokeColor={"#000"}
+                    strokeColor={dark ? "#FFFFFF" : "#000"}
                     strokeWidth={3}
                     lineDashPattern={[1]}
                 />}
