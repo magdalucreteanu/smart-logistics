@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import { ECharts } from "react-native-echarts-wrapper";
 import { Button } from "react-native-elements";
@@ -11,7 +11,7 @@ const ContainerEnvironmentScreen = ({ route, navigation }) => {
     const { colors } = useTheme();
 
     // Navigation Header bearbeiten
-    useLayoutEffect(() => {
+    useEffect(() => {
         navigation.setOptions({
           headerTitle: 'Environment',
           headerRight: () => (
