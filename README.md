@@ -107,14 +107,13 @@ React native maps: https://github.com/react-native-maps/react-native-maps
 ## Offene Punkte (Liste nicht vollständig)
 
 Liste 1
-- News Screen mit Funktionalität bzw. Informationen füllen
+
 - Landscape Modus einführen
 
 Liste 2
--   Platzhalter auf den Screens ersetzen und ordentlich umsetzen
--	Funktionalität der Filterfelder (z.B. Datum von und bis) auf dem Shipment Screen implementieren
--	Nachricht Funktionalität implementieren
--	Nachrichten vom Benutzer anhängig speichern
+
+- Funktionalität der Filterfelder (z.B. Datum von und bis) auf dem Shipment Screen implementieren
+
 
 ## Done
 - Leeres Projekt in Github erstellt
@@ -143,7 +142,11 @@ Liste 2
 - Speichern der Login-Daten (AsyncStorage), automatisches Login beim nächsten Öffnen der App
 - Logout Funktionalität (wird auf Login Seite navigieren) mit useContext(AuthContext) und signOut()
 - Auf allen Seiten: Home Button erstellen (wie in Miro Board oder in NASA App), sodass der User zur Hauptseite landen kann
--  Style für alle Seiten einführen
--  Settings wie in NASA App (mit Dark Theme) implementieren
--  Styling des Dark Themes überarbeiten
--  Message Screen gefüllt (nur halbe Funktionalität, lokales Speichern der Nachrichten, bisher unabhängig vom Benutzer)
+- Style für alle Seiten einführen
+- Settings wie in NASA App (mit Dark Theme) implementieren
+- Styling des Dark Themes überarbeiten
+- Message Screen gefüllt (lokales Speichern der Nachrichten, abhängig vom Benutzer und Container)
+- Nachricht Funktionalität implementieren
+- Nachrichten vom Benutzer anhängig speichern
+- News Screen mit Funktionalität bzw. Informationen füllen
+- Platzhalter auf den Screens ersetzen und ordentlich umsetzen
