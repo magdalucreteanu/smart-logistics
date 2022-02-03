@@ -8,6 +8,13 @@ import {baseText, titleText} from '../constants/LayoutStyles';
 import { useTheme } from '@react-navigation/native';
 import { Bubble, GiftedChat, Send, InputToolbar } from 'react-native-gifted-chat';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { serverAddress } from '../constants/Server';
+
+const systemChatUser = {
+  _id: 2,
+  name: 'System',
+  avatar: 'https://placeimg.com/140/140/any',
+}
 
 const ContainerMessageScreen = ({ route, navigation }) => {
   
@@ -55,14 +62,10 @@ const ContainerMessageScreen = ({ route, navigation }) => {
         console.log('No stored messages');
         setMessages([
           {
-            _id: 1,
+            _id: Math.round(Math.random() * 1000000),
             text: '[System Message] \nIf there are any problems with your containers, you can message the staff here. Please describe the problem in detail, we will take care of it as soon as possible.',
             createdAt: new Date(),
-            user: {
-              _id: 2,
-              name: 'React Native',
-              avatar: 'https://placeimg.com/140/140/any',
-            },
+            user: systemChatUser,
           },
         ])
       // Wenn gespeicherte Nachrichten vorhanden
@@ -71,13 +74,34 @@ const ContainerMessageScreen = ({ route, navigation }) => {
       }
   };
 
+  // liefert ein Message
+  const setMessageFromServer = async () => {
+    try {
+      // Server Request durchführen
+      let response = await fetch(serverAddress() + '/message');
+      // Text aus der Response lesen
+      let serverMessage = await response.text();
+      setMessages(previousMessages => GiftedChat.append(previousMessages,
+        [
+          {
+            _id: Math.round(Math.random() * 1000000),
+            text: serverMessage,
+            createdAt: new Date(),
+            user: systemChatUser,
+          },
+        ]));
+    } catch (error) {
+        Alert.alert('Error', error.message);
+    }
+  }
+  
   const _storeMessages = async () => {
-      try {
-      // Messages speichern
-        await AsyncStorage.setItem('@messages/' + username + '/' + containerNumber, JSON.stringify(messages));
-      } catch (error) {
-          Alert.alert('Error', error.message);
-      }
+    try {
+    // Messages speichern
+      await AsyncStorage.setItem('@messages/' + username + '/' + containerNumber, JSON.stringify(messages));
+    } catch (error) {
+        Alert.alert('Error', error.message);
+    }
   };
   
   useEffect(() => {
@@ -91,7 +115,8 @@ const ContainerMessageScreen = ({ route, navigation }) => {
   }, [messages]);
 
   const onSend = useCallback((messages = []) => {
-    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+    setMessages(previousMessages => GiftedChat.append(previousMessages, messages));
+    setMessageFromServer();
   }, [])
 
   // Text-"Bubble" anpassen

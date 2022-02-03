@@ -75,3 +75,18 @@ app.get('/breaking', (req, res) => {
     let index = Math.floor(Math.random() * Math.floor(size));
     return res.send(message[index]);
 });
+
+// Liefert die Breaking News (das ist der Scrolling Text in News Screen
+// nimmt eine zufällige Breaking News Nachricht aus einer Liste
+app.get('/message', (req, res) => {
+    let message = [
+        "Can you please provide more information?",
+        "I am not sure whether I understood you correctly.",
+        "We are already of this issue and we are working on fixing it.",
+        "Thank you for your message. Our team will investigate the problem and get back to you.",
+        "Does this problem affect your other containers?"
+      ];
+    let size = 5;
+    let index = Math.floor(Math.random() * Math.floor(size));
+    return res.send(message[index]);
+});
