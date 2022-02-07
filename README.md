@@ -64,27 +64,27 @@ Hier steht die korrekte Adresse des Laptops (mit ipconfig oä zu finden).
 Sowas wie localhost oder 127.0.0.1 als Server Adresse funktioniert nicht weil der Emulator (oder Handy) ein separates Gerät mit einer anderen IP Adresse ist.
 
 Links:
--   	https://momentjs.com/
--   	https://blog.logrocket.com/react-native-maps-introduction/
--	https://react-native-async-storage.github.io/async-storage/docs/install/
--	https://react-native-async-storage.github.io/async-storage/docs/usage
--   	https://github.com/homielab/react-native-auto-scroll
--   	https://www.npmjs.com/package/react-native-rss-parser
--  	https://blog.feedspot.com/logistics_rss_feeds/
--   	https://reactnativeforyou.com/how-to-add-hyperlinks-in-react-native/
--   	https://stackoverflow.com/questions/29334984/render-html-in-react-native
--   	https://github.com/jsdf/react-native-htmlview
--   	https://www.npmjs.com/package/react-native-render-html
--	https://github.com/FaridSafi/react-native-gifted-chat
--	https://www.youtube.com/watch?v=gvF6sFIPfsQ&t=1242s
--	https://www.youtube.com/watch?v=km1qm1Zz2lY
--	https://www.youtube.com/watch?v=4N-8RTeQ1fA
--	https://reactnavigation.org/docs/themes/
--	https://reactnavigation.org/docs/stack-navigator/
--	https://snack.expo.dev/@zvona/a-simple-login-form
--	https://reactnativeelements.com/docs/button/#buttonstyle
--	https://reactnativeelements.com/docs/input/#containerstyle
--	https://icons.expo.fyi/
+- https://momentjs.com/
+- https://blog.logrocket.com/react-native-maps-introduction/
+- https://react-native-async-storage.github.io/async-storage/docs/install/
+- https://react-native-async-storage.github.io/async-storage/docs/usage
+- https://github.com/homielab/react-native-auto-scroll
+- https://www.npmjs.com/package/react-native-rss-parser
+- https://blog.feedspot.com/logistics_rss_feeds/
+- https://reactnativeforyou.com/how-to-add-hyperlinks-in-react-native/
+- https://stackoverflow.com/questions/29334984/render-html-in-react-native
+- https://github.com/jsdf/react-native-htmlview
+- https://www.npmjs.com/package/react-native-render-html
+- https://github.com/FaridSafi/react-native-gifted-chat
+- https://www.youtube.com/watch?v=gvF6sFIPfsQ&t=1242s
+- https://www.youtube.com/watch?v=km1qm1Zz2lY
+- https://www.youtube.com/watch?v=4N-8RTeQ1fA
+- https://reactnavigation.org/docs/themes/
+- https://reactnavigation.org/docs/stack-navigator/
+- https://snack.expo.dev/@zvona/a-simple-login-form
+- https://reactnativeelements.com/docs/button/#buttonstyle
+- https://reactnativeelements.com/docs/input/#containerstyle
+- https://icons.expo.fyi/
 
 ## How To Server
 
