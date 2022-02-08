@@ -82,7 +82,7 @@ app.get('/message', (req, res) => {
     let message = [
         "Can you please provide more information?",
         "I am not sure whether I understood you correctly.",
-        "We are already of this issue and we are working on fixing it.",
+        "We are aware of this issue and we are working on fixing it.",
         "Thank you for your message. Our team will investigate the problem and get back to you.",
         "Does this problem affect your other containers?"
       ];
